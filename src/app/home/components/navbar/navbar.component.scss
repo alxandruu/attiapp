@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap%27");
+
+* {
+    font-family: "Play", sans-serif;
+}
+
+#nav1,
+#nav2 {
+    li {
+        a {
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e2e072;
+        }
+    }
+}
+
+.boton {
+    display: none;
+}
+#nav2 {
+    display: none;
+}
+#textonombre {
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.prin {
+    background-color: #05314f;
+    color: #05314f;
+    font-size: 16px;
+}
+
+#perfil {
+    color: #05314f;
+}
+
+@media (max-width: 1024px) {
+    #perfil {
+        font-size: 12px;
+    }
+
+    #textonombre {
+        font-size: 18px;
+    }
+
+    @media (max-width: 767px) {
+        #nav1 {
+            display: none;
+        }
+        #nav2 {
+            display: block;
+            ul {
+                li {
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .boton {
+            display: block;
+        }
+    }
+
+    @media (max-width: 840px) {
+        #nav1 {
+            ul {
+                li {
+                    a {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 767px) and (max-width: 870px) {
+        #sesion {
+            display: none;
+        }
+
+        #textonombre {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 345px) {
+        #perfil {
+            display: none;
+        }
+    }
+}
+#imgPerfil {
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.15);
+}

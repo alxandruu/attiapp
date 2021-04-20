@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <nav class="row ">
+        <div class="bg-light col-md-4 ">
+
+            <div class="d-flex align-items-center position-relative">
+
+                <img src="../../../assets/img/IMG_20200423_115212.jpg" width="80" height="80"
+                    class=" ms-3 mt-2 mb-2 rounded-circle" id="imgPerfil">
+                <div id="perfil" class="m-2">
+                    <div id="sesion"> Sesión iniciada como:</div>
+                    <div id="textonombre" class="mt-0">ALEXANDRU</div>
+                </div>
+                <div class="position-absolute  top-0 end-0">
+                    <a [routerLink]="['/profile']"><img src="../../../assets/iconos/tuerca.svg" width="20" height="20"
+                            class="me-2 mt-1"></a>
+                    <a (click)="logout()"><img src="../../../assets/iconos/logout.svg" width="20" height="20"
+                            class="mt-1"></a>
+
+                </div>
+                <div class="boton p-2 position-absolute end-0 mt-3">
+                    <button type="button" class="btn btn-warning  ms-2 "><img
+                            src="../../../assets/iconos/bars-solid.svg" width="20" height="20"></button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-8 prin" id="navbarNavAltMarkup" id="nav1">
+            <ul class="list-group list-group-horizontal list-unstyled h-100 d-flex justify-content-around align-items-center"
+                id="menu">
+                <li>
+                    <a [routerLink]="['/inicio']">Inicio</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/empleados']">Empleados</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/ganancias']">Ganancias</a>
+                </li>
+                <li>
+                    <a href="#" [routerLink]="['/gastos']">Gastos</a>
+                </li>
+                <li>
+                    <a href="#">Resumen</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-8 prin" id="nav2">
+            <ul class="list-group list-group-flush list-unstyled h-100 d-flex justify-content-around align-items-center"
+                id="menu">
+                <li>
+                    <a [routerLink]="['/inicio']">Inicio</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/empleados']">Empleados</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/ganancias']">Ganancias</a>
+                </li>
+                <li>
+                    <a href="#" [routerLink]="['/gastos']">Gastos</a>
+                </li>
+                <li>
+                    <a href="#">Resumen</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </nav>
+</div>

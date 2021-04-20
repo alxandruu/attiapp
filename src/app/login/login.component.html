@@ -1,0 +1,18 @@
+<div class="row" style="height: 100vh; width: 100%;  margin: 0px;">
+    <div class="col-md-6 position-relative"  id="blogo">
+        <img src="../../assets/logo.svg" width="auto" class="position-absolute top-50 start-50 translate-middle w-50">
+    </div>
+    <div class="col-md-6 position-relative" id="form-div" style="height: 100%;">
+        <form class="position-absolute top-50 start-50 translate-middle " [formGroup]="loginForm"
+            (ngSubmit)="postdata(loginForm)">
+            <label id="form-div-user-label">Usuario</label>
+            <input type="text" placeholder="Introducir usuario" name="username" formControlName="username">
+            <label>Contraseña</label>
+            <input type="password" placeholder="Introducir contraseña" name="password" formControlName="password">
+            <button class="btn btn-primary-custom " type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
+<div class="position-absolute top-0 end-0 m-1" id="alertBox">
+    
+</div>
