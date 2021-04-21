@@ -4,6 +4,7 @@
     font-family: "Play", sans-serif;
 }
 
+
 #nav1,
 #nav2 {
     li {
@@ -18,6 +19,7 @@
         }
     }
 }
+
 
 .boton {
     display: none;
@@ -38,6 +40,21 @@
 
 #perfil {
     color: #05314f;
+}
+
+
+// CSS ICONS 
+.icon-navigation {
+    svg g path {
+        fill: #05314f;
+        transition: fill 200ms ease;
+    }
+}
+.icon-navigation:hover {
+    svg g path {
+        fill: #e2e072;
+        transition: fill 200ms ease;
+    }
 }
 
 @media (max-width: 1024px) {
