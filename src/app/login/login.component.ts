@@ -21,13 +21,16 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.dataService.isLoggedIn()){
+      this.router.navigate(['/dashboard']);
+    }
   }
   postdata(loginForm1) {
     this.dataService.userlogin(loginForm1.value.username, loginForm1.value.password, loginForm1.value.remember)
       .pipe(first())
       .subscribe(
         data => {
-          const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/home';
+          const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
           this.router.navigate([redirect]);
         },
         error => {
