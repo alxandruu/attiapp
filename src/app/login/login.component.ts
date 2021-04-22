@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { ApiService } from '../_services/api.service';
+import { LoginApiService } from '../_services/login-api.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { ApiService } from '../_services/api.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router) {
+  constructor(private fb: FormBuilder, private dataService: LoginApiService, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(1)]],
       password: ['', Validators.required],
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.dataService.isLoggedIn()){
+    if (this.dataService.isLoggedIn()) {
       this.router.navigate(['/dashboard']);
     }
   }
