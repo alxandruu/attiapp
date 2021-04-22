@@ -4,7 +4,6 @@
     font-family: "Play", sans-serif;
 }
 
-
 #nav1,
 #nav2 {
     li {
@@ -19,7 +18,6 @@
         }
     }
 }
-
 
 .boton {
     display: none;
@@ -42,16 +40,15 @@
     color: #05314f;
 }
 
-
-// CSS ICONS 
+// CSS ICONS
 .icon-navigation {
-    svg g path {
+    svg path {
         fill: #05314f;
         transition: fill 200ms ease;
     }
 }
 .icon-navigation:hover {
-    svg g path {
+    svg path {
         fill: #e2e072;
         transition: fill 200ms ease;
     }
