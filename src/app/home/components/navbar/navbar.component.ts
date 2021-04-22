@@ -29,9 +29,20 @@ export class NavbarComponent implements OnInit {
 
   userData() {
     let arr = this.dataService.getData();
-    console.log(arr);
+   
     this.name = arr[0]
     this.profile_img = (arr[1] == '') ? "default.jpg" : arr[1];
   }
+
+   toogle() {
+    var x = document.getElementById("nav2");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
 }
+
+
 

@@ -3,24 +3,30 @@
         <img src="../../assets/logo.svg" width="auto" class="position-absolute top-50 start-50 translate-middle w-50">
     </div>
     <div class="col-md-6 position-relative" id="form-div" style="height: 100%;">
-        <form class="position-absolute top-50 start-50 translate-middle" [formGroup]="loginForm"
+        <form class="position-absolute top-50 start-50 translate-middle d-flex flex-column" [formGroup]="loginForm"
             (ngSubmit)="postdata(loginForm)">
             <label id="form-div-user-label">Usuario</label>
             <input type="text" placeholder="Introducir usuario" name="username" formControlName="username">
+            
             <label>Contraseña</label>
+          
             <input type="password" placeholder="Introducir contraseña" name="password" formControlName="password">
+           
             <div class="form-check ms-2">
                 <input class="form-check-input" type="checkbox" name="remember" id="remember" formControlName="remember">
                 <label class="form-check-label" for="remember">
                     Recuerdame
                 </label>
             </div>
-           
+            <div class="  m-1" id="alertBox">
+                <div class="alert alert-danger alert-dismissible fade show  d-flex" role="alert">
+                    <img src="../../assets/icons/alert.svg" alt="Alert Exclamation Circle Color Red" class="me-2">Usuario o
+                    contraseña erróneos. Vuelve a intentarlo
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+            </div>
             <button class="btn btn-primary-custom " type="submit">Iniciar Sesión</button>
 
         </form>
     </div>
-</div>
-<div class="position-absolute top-0 end-0 m-1" id="alertBox">
-
 </div>
