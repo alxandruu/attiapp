@@ -4,11 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AppRouterModule } from './_services/app-router/app-router.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
-import { AppRouterModule } from './_services/app-router/app-router.module';
+
 
 
 @NgModule({

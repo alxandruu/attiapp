@@ -1,0 +1,75 @@
+
+h2 {
+    font-size: 36px;
+    color: #05314f;
+    border-bottom: 2px solid #05314f;
+    width: auto;
+    padding-bottom: 0.6rem;
+    
+    
+}
+
+#permisos-body {
+    div + div {
+        margin-top: 1rem;
+    }
+    div {
+        span {
+            font-size: 20px;
+        }
+    }
+    .permiso {
+        width: 20px;
+        height: 20px;
+        border: 2px solid black;
+    }
+}
+#conf-perfil-body {
+    button + button {
+        margin-top: 1rem;
+    }
+}
+.btn-custom {
+    border-radius: 40px;
+    background-color: #05314f;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+}
+.btn-custom:hover {
+    background-color: #e2e072;
+}
+#soporte-body {
+    p {
+        span {
+            color: #05314f;
+            font-weight: bold;
+            border-bottom: 2px dotted #05314f;
+        }
+        span:hover {
+            color: black;
+            border-bottom-color: black;
+        }
+    }
+}
+.box {
+    background-color: rgba(226, 224, 114, 0.6);
+    border: 3px solid #05314f;
+    border-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+    #img-logo {
+        display: none;
+    }
+    h1 {
+        display: none;
+    }
+    h2 {
+        text-align: center;
+    }
+   #col2 {
+    padding-right: 0;
+    padding-left: 0;
+   }
+}
