@@ -2,7 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from '../_models/users';
-
+import { Perms } from '../_models/perms';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,8 +24,11 @@ export class LoginApiService {
   }
 
   public userPermissions(){
-    let i = this.getToken();
-   
+    let tokenUser = this.getToken();
+    return this.httpClient.post<any>(this.baseUrl + '/perms.php', { tokenUser })
+    .pipe(map(Perms => {
+      return Perms;
+    }));
   }
 
   //token
