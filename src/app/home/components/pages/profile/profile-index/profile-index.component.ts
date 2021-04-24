@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginApiService } from 'src/app/_services/login-api.service';
 
 @Component({
   selector: 'app-profile-index',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileIndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: LoginApiService) { 
+
+    
+  }
 
   ngOnInit(): void {
   }

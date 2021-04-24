@@ -23,6 +23,11 @@ export class LoginApiService {
       }));
   }
 
+  public userPermissions(){
+    let i = this.getToken();
+   
+  }
+
   //token
   setToken(token: string, remember: boolean) {
     if (remember == true) {
