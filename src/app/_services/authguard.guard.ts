@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Router } from '@angular/router';
+import { LoginService } from '../login/services/login.service';
 import { LoginApiService } from './login-api.service';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { LoginApiService } from './login-api.service';
 })
 
 export class AuthguardGuard implements CanActivate {
-    constructor(private dataService: LoginApiService, private router: Router) { }
+    constructor( private router: Router, private loginService: LoginService) { }
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
@@ -16,11 +17,11 @@ export class AuthguardGuard implements CanActivate {
     }
 
     isLogin(routeurl: string) {
-        if (this.dataService.isLoggedIn()) {
+        if (this.loginService.isLoggedIn()) {
             return true;
         }
 
-        this.dataService.redirectUrl = routeurl;
+        this.loginService.redirectUrl = routeurl;
         this.router.navigate(['/login'], { queryParams: { returnUrl: routeurl } });
     }
 }

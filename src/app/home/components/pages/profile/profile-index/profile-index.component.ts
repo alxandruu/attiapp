@@ -9,21 +9,21 @@ import { OutputService } from 'src/app/_services/other/output.service';
   styleUrls: ['./profile-index.component.scss']
 })
 export class ProfileIndexComponent implements OnInit {
+  perms:any[];
   constructor(private dataService: LoginApiService, private outputService: OutputService) {
-
+    
   }
 
   ngOnInit(): void {
     this.getPermissions();
   }
 
-  getPermissions() {
-    this.dataService.userPermissions()
+  getPermissions(): any {
+     this.dataService.userPermissions()
       .pipe(first())
       .subscribe(
-        data => {
-          let element = document.getElementById('permisos-body');
-          
+        data => {  
+          this.perms = data;
         },
         error => {
           console.log("Error al obtener los permisos.");
