@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
-
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-login',
@@ -48,4 +48,6 @@ export class LoginComponent implements OnInit {
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>`;
   }
+
+  
 }
