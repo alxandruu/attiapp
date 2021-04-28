@@ -42,11 +42,27 @@ export class LoginComponent implements OnInit {
   get password() { return this.loginForm.get('password'); }
 
   errLogin() {
-    document.querySelector('#alertBox').innerHTML = `<div class="alert alert-danger alert-dismissible fade show  d-flex" role="alert">
-   <img src="../../assets/icons/alert.svg" alt="Alert Exclamation Circle Color Red" class="me-2">Usuario o
-   contraseña erróneos. Vuelve a intentarlo
-   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>`;
+    $('#alertBox').html('');
+    let caja;
+    caja = $('<div>',{
+      'class':"alert alert-danger alert-dismissible fade show  d-flex",
+      'role':"alert"
+    }).append(
+      $('<img>',{
+        'src':"../../assets/icons/alert.svg",
+        'class':"me-2"
+      }),
+      $('<span>').text("Usuario o contraseña erróneos. Vuelve a intentarlo"),
+      $('<button>',{
+        'type':"button",
+        'class':"btn-close",
+        'data-bs-dismiss':"alert",
+        'aria-label':"Close"
+      })
+    );
+    $('#alertBox').append(caja);
+
+
   }
 
   
