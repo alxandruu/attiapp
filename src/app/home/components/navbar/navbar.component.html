@@ -3,7 +3,7 @@
         <div class="bg-light col-md-4">
             <div class="d-flex align-items-center position-relative">
 
-                <img src="../../../../assets/img/users/{{this.profile_img}}" width="80" height="80"
+                <img src="{{this.profile_img}}" width="80" height="80"
                     class=" ms-3 mt-2 mb-2 rounded-circle" id="imgPerfil">
                 <div id="perfil" class="m-2">
                     <div id="sesion"> Sesión iniciada como:</div>
@@ -36,8 +36,13 @@
 
                 </div>
                 <div class="boton p-2 position-absolute end-0 mt-3" (click)="toogle()">
-                    <button type="button" class="btn btn-warning  ms-2 "><img
-                            src="../../../../assets/icons/bars-solid.svg" ></button>
+                    <button type="button" class="btn btn-warning  ms-2 "><svg width="20" height="20" aria-hidden="true" focusable="false"
+                            data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                            </path>
+                        </svg></button>
                 </div>
             </div>
         </div>

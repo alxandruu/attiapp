@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { NavbarService } from './services/navbar.service';
 
 
@@ -8,7 +9,7 @@ import { NavbarService } from './services/navbar.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  name: string;
+  name: string ;
   profile_img: string;
 
   constructor(private navbarService: NavbarService) {
@@ -16,19 +17,22 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.navbarService.getUserInfo()
+    .pipe(first())
+      .subscribe(
+        data => { 
+          let img: string = (data["img_profile"] == '')? 'default.jpg':data["img_profile"]; 
+          this.name = data["name"];
+          this.profile_img = '../../../../assets/img/users/' + img;
+        },
+        error => {
+          console.log("Error al obtener los permisos.");
+        });;
   }
 
   public logout(): void {
     this.navbarService.logout();
   }
-
-  // userData() {
-  //   let arr = this.dataService.getData();
-
-  //   this.name = arr[0]
-  //   this.profile_img = (arr[1] == '') ? "default.jpg" : arr[1];
-  // }
 
   public toogle(): void {
     var x = document.getElementById("nav2");
