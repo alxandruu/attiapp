@@ -9,14 +9,17 @@ export class LoginService {
   redirectUrl: string;
   baseUrl: string = `${window.location.protocol}//${window.location.hostname}/attiapp/php`;
 
-  @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
+  //La funcion output hace que los datos pasen del hijo al padre
+  //EventEmitter, hace que Angular cree un nuevo evento 'emiter' y el tipo de dato que emite es un string
+  //https://angular.io/guide/inputs-outputs
+ // @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private http: HttpClient) { }
 
   public login(username, password, remember) {
     return this.http.post(this.baseUrl + '/login.php', { username, password })
       .pipe(map(Users => {
         this.setToken(Users[0].id, remember);
-        this.getLoggedInName.emit(true);
+        //this.getLoggedInName.emit(true);
         return Users;
       }));
   }
