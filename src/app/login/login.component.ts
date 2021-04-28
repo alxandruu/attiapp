@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     }
   }
   postdata(loginForm1) {
-    this.loginService.login(loginForm1.value.username, loginForm1.value.password, loginForm1.value.remember)
+    this.loginService.login(loginForm1.value.username.toLowerCase(), loginForm1.value.password, loginForm1.value.remember)
       .pipe(first())
       .subscribe(
         data => {
