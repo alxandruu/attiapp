@@ -1,0 +1,79 @@
+#btn-volver {
+    font-size: 3.5rem;
+    color: #05314f;
+}
+#btn-volver:hover {
+    color: #e2e072;
+}
+h2 {
+    color: #05314f;
+}
+.box {
+    background-color: rgba(226, 224, 114, 0.6);
+    border: 3px solid #05314f;
+    border-radius: 1rem;
+    form {
+        border-radius: 1rem;
+        border: 2.3px dotted #05314f;
+        label {
+            span {
+                font-size: 20px;
+            }
+            input {
+                border-radius: 1rem;
+                padding: 0.6rem;
+                width: 250px;
+                margin-left: 0.7rem;
+                text-align: center;
+                background-color: #e5e5e5;
+                border: none;
+                outline: none;
+            }
+        }
+        label + label {
+            margin-top: 1rem;
+        }
+        .btn-custom {
+            height: 50px;
+            width: 291px;
+            border-radius: 40px;
+            color: white;
+            background-color: #05314f;
+            border: 2px solid black;
+        }
+
+        .btn-custom:hover {
+            background-color: #e2e072;
+            color: black;
+        }
+    }
+}
+@media (max-width: 576px) {
+    #f1 {
+        text-align: center;
+        button {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .box {
+        form {
+            label {
+                input {
+                    width: 100%;
+                    margin-left: 0rem;
+                }
+                span + input {
+                    margin-top: 0.8rem;
+                }
+            }
+            .btn-custom {
+                width: 70%;
+                text-align: center;
+              
+                span {display: none;}
+            }
+            
+        }
+    }
+}

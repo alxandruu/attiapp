@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
+import { ChangePassComponent } from './home/components/pages/profile/change-pass/change-pass.component';
+import { ChangePhotoComponent } from './home/components/pages/profile/change-photo/change-photo.component';
 
 
 
@@ -19,6 +21,8 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
     HomeComponent,
     LoginComponent,
     NavbarComponent,
+    ChangePassComponent,
+    ChangePhotoComponent,
   ],
   imports: [
     BrowserModule,
