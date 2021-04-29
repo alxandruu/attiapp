@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
-import { LoginApiService } from 'src/app/_services/login-api.service';
-import { OutputService } from 'src/app/_services/other/output.service';
+import { PermissionsService } from './services/permissions.service';
+
 
 @Component({
   selector: 'app-profile-index',
@@ -9,24 +9,22 @@ import { OutputService } from 'src/app/_services/other/output.service';
   styleUrls: ['./profile-index.component.scss']
 })
 export class ProfileIndexComponent implements OnInit {
-  perms:any[];
-  constructor(private dataService: LoginApiService, private outputService: OutputService) {
-    
-  }
-
+  constructor(private perms: PermissionsService) { }
+  arPerm: boolean[];
   ngOnInit(): void {
     this.getPermissions();
   }
 
-  getPermissions(): any {
-     this.dataService.userPermissions()
-      .pipe(first())
+  private getPermissions(): any {
+    this.perms.userPermissions()
       .subscribe(
-        data => {  
-          this.perms = data;
+        data => {
+          this.arPerm = data;
+          
         },
         error => {
-          console.log("Error al obtener los permisos.");
-        });
+          console.log('Error al obtener los permisos')
+        }
+      )
   }
 }
