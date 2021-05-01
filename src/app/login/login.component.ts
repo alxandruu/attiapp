@@ -37,9 +37,10 @@ export class LoginComponent implements OnInit {
           this.errLogin();
         });
   }
-
+  
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
+
 
   errLogin() {
     $('#alertBox').html('');
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit {
       })
     );
     $('#alertBox').append(caja);
-
+       
 
   }
 

@@ -20,7 +20,7 @@ export class LoginService {
       .pipe(map(Users => {
         this.setToken(Users[0].id, remember);
         //this.getLoggedInName.emit(true);
-        return Users;
+        return Users; 
       }));
   }
 

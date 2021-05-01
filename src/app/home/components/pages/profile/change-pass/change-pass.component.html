@@ -8,17 +8,21 @@
 <div class="container  ">
     <div class="box p-4 mb-2">
         <h2 class="me-auto">Cambiar Contraseña</h2>
-        <form class=" mt-4 bg-light p-4 text-center ">
+        <form class=" mt-4 bg-light p-4 text-center " [formGroup]="changeForm"
+        (ngSubmit)="postdata(changeForm)">
             <div class="d-flex flex-column">
-                <label ><span>Contraseña Actual </span><input type="text"
-                        placeholder="Introducir contraseña actual"></label>
-                <label><span>Nueva Contraseña</span><input type="text"
-                        placeholder="Introducir nueva contraseña"></label>
+                <label ><span>Contraseña Actual </span><input type="password"
+                        placeholder="Introducir contraseña actual" name="passact" formControlName="passact"></label>
+                <label><span>Nueva Contraseña</span><input type="password"
+                        placeholder="Introducir nueva contraseña" name="passnew" formControlName="passnew"></label>
+                <div class="mx-auto mt-3" id="alertBox">
+               
+                </div>
                 <button type="submit" class="btn btn-custom mt-4 mx-auto">
                     Confimar <span>Cambio</span>
                 </button>
             </div>
-
+         
         </form>
     </div>
 </div>
