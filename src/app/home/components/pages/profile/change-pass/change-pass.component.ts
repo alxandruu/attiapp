@@ -73,7 +73,7 @@ export class ChangePassComponent implements OnInit {
   }
   
   hide(){
-    $('#exampleModalCenter').fadeOut(2000).modal('hide');
+    $('#exampleModalCenter').modal('hide');
   }
  
   errChange(dato) {

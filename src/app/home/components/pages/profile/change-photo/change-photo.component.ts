@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { NavbarService } from '../../../navbar/services/navbar.service';
 import { ProfileService } from '../services/profile.service';
+import * as $ from "jquery";
+declare var $:any;
 
 @Component({
   selector: 'app-change-photo',
@@ -39,8 +41,8 @@ export class ChangePhotoComponent implements OnInit {
     this.profileService.changeIMG(this.imgForm.value)
       .subscribe(
         res => {
-          console.log(res);
-          alert('Uploaded Successfully.');
+        
+          $('#exampleModalCenter').modal('show');
         },
         error => {
           console.log(error);
@@ -67,4 +69,8 @@ export class ChangePhotoComponent implements OnInit {
     }
   }
 
+  hide(){
+    $('#exampleModalCenter').modal('hide');
+  }
 }
+
