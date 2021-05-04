@@ -12,7 +12,7 @@ import * as $ from "jquery";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder,  private router: Router, private loginService: LoginService) {
+  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(1)]],
       password: ['', Validators.required],
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           this.errLogin();
         });
   }
-  
+
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
 
@@ -45,26 +45,26 @@ export class LoginComponent implements OnInit {
   errLogin() {
     $('#alertBox').html('');
     let caja;
-    caja = $('<div>',{
-      'class':"alert alert-danger alert-dismissible fade show  d-flex",
-      'role':"alert"
+    caja = $('<div>', {
+      'class': "alert alert-danger alert-dismissible fade show  d-flex",
+      'role': "alert"
     }).append(
-      $('<img>',{
-        'src':"../../assets/icons/alert.svg",
-        'class':"me-2"
+      $('<img>', {
+        'src': "../../assets/icons/alert.svg",
+        'class': "me-2"
       }),
       $('<span>').text("Usuario o contraseña erróneos. Vuelve a intentarlo"),
-      $('<button>',{
-        'type':"button",
-        'class':"btn-close",
-        'data-bs-dismiss':"alert",
-        'aria-label':"Close"
+      $('<button>', {
+        'type': "button",
+        'class': "btn-close",
+        'data-bs-dismiss': "alert",
+        'aria-label': "Close"
       })
     );
     $('#alertBox').append(caja);
-       
+
 
   }
 
-  
+
 }

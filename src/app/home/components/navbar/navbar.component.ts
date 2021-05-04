@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
           this.profile_img = '../../../../assets/img/users/' + img;
         },
         error => {
-          console.log("Error al obtener los permisos.");
+          console.log("Error al obtener la imágen.");
         });;
   }
 

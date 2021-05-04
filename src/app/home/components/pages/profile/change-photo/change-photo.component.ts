@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { NavbarService } from '../../../navbar/services/navbar.service';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-change-photo',
@@ -6,10 +10,61 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./change-photo.component.scss']
 })
 export class ChangePhotoComponent implements OnInit {
-
-  constructor() { }
+  actimg: string;
+  newimg: string = '../../../../../../assets/img/users/default.jpg';
+  imgForm: FormGroup;
+  constructor(private navbarService: NavbarService, private fb: FormBuilder, private profileService: ProfileService) {
+    this.imgForm = this.fb.group({
+      img: [''],
+      fileSource: ['']
+    })
+  }
 
   ngOnInit(): void {
+    this.setURLActualImage();
+  }
+
+  private setURLActualImage(): void {
+    this.navbarService.getUserInfo()
+      .subscribe(
+        data => {
+          let img: string = (data["img_profile"] == '') ? 'default.jpg' : data["img_profile"];
+          this.actimg = '../../../../assets/img/users/' + img;
+        },
+        error => {
+          console.log("Error al obtener la imágen actual.");
+        });;
+  }
+  public changeImage() {
+    this.profileService.changeIMG(this.imgForm.value)
+      .subscribe(
+        res => {
+          console.log(res);
+          alert('Uploaded Successfully.');
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  public changeNewImg(event) {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+
+
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        this.newimg = reader.result as string;
+        this.imgForm.patchValue({
+          fileSource: reader.result
+        });
+
+      };
+
+    }
   }
 
 }
