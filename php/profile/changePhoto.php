@@ -27,7 +27,7 @@ if (isset($postdata) && !empty($postdata)) {
                 echo json_encode(true);
             } else {
                 echo json_encode(false);
-            }a
+            }
         }    
     } else {
         echo json_encode(false);
