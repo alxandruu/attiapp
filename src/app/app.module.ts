@@ -15,6 +15,7 @@ import { ChangePhotoComponent } from './home/components/pages/profile/change-pho
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { ChangePhotoComponent } from './home/components/pages/profile/change-pho
     NavbarComponent,
     ChangePassComponent,
     ChangePhotoComponent,
+  
   ],
   imports: [
     BrowserModule,

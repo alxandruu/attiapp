@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap%27');
+
+* {
+  font-family: 'Play', sans-serif;
+}
+
+h1{
+    color:#05314F;
+}
+
+#buscador{
+  input{
+    height: 42px; 
+    font-size:18px;
+    padding-left: 44px;
+    border-radius:40px;
+   margin-left: 1em;
+   background-color: #E5E5E5;
+   border: 1px solid black;
+   outline:none;
+  }
+}
+
+#buscador::before{
+  content: "\f007";
+  
+}
+#buscador::before{
+  font-family: "Font Awesome\ 5 free";
+  position:absolute;
+  left:160px;
+  font-size:19px;
+  padding-top:7px;
+  color:black;
+}
+
+#add{
+  button{
+    height: 3em; 
+    font-size:18px;
+    border-radius:40px;
+    color:white;
+   background-color: #05314F;
+   border: 2px solid black;
+  }
+
+  button:hover{
+    background-color: #E2E072;
+    color:black;
+  }
+}
+
+#tabla1 {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+
+  
+}
+
+#tabla1 tr{
+  background-color: #05314F;
+}
+#tabla1 tr:hover{
+  background-color: #706e6d;
+  
+}
+
+
+#tabla1 th {
+  background-color: #2F2D2C;
+  color: white;
+  border-collapse: collapse;
+  border:none;
+  font-size: 25px;
+ 
+}
+
+#tabla1 th,
+td {
+  
+  height:50px;
+  text-align: center;
+ 
+  padding: 5px;
+  border:none;
+
+ 
+}
+
+#tabla1 td{
+
+  color:white;
+  font-size: 23px;
+}
+
+
+#sombra{
+  box-shadow: 0px 4px rgba(0,0,0,0.25);
+}
+
+img{
+  width:60px;
+  height: 60px;
+}
+
+.fa-edit{
+  color:#E2E072;
+}
+
+.fa-trash-alt{
+  color:#F23838;
+}
+
+
+@media (max-width:768px){
+  .options{
+    display:flex;
+    flex-direction: column;
+    
+    #add{
+      margin-top: 1em;
+    
+    }
+  }
+}
+
+@media (max-width: 470px){
+  #buscador{
+    margin-left: -25px;
+    span{
+      display: none;
+    }
+  }
+
+  #buscador::before{
+    margin-left:-70px;
+    font-family: "Font Awesome\ 5 free";
+  position:absolute;
+  left:150px;
+  font-size:19px;
+  padding-top:7px;
+  color:black;
+  }
+
+  
+}
+
+@media (max-width: 321px){
+  #buscador{
+    input{
+      width:100%;
+      font-size:14px;
+    }
+  }
+  #buscador::before{
+    font-family: "Font Awesome\ 5 free";
+    position:absolute;
+    left:145px;
+    font-size:19px;
+    padding-top:7px;
+    color:black;
+  }
+}
+
+@media (max-width: 281px){
+  #buscador{
+    input{
+      font-size:11px;
+    }
+  }
+  #buscador::before{
+    font-family: "Font Awesome\ 5 free";
+    position:absolute;
+    left:145px;
+    font-size:19px;
+    padding-top:7px;
+    color:black;
+  }
+
+  #add{
+   button{
+     margin-left:-12px;
+     font-size:13px;
+     
+   }
+  }
+
+  #titulo{
+  
+    h1{
+     margin-left:-14px;
+    }
+  }
+}
+
+@media (max-width: 380px){
+  #add{
+    button{
+      height: 4em;
+      
+    }
+}
+}
+#mobile-id {
+  display: none;
+}
+
+@media (max-width: 608px){
+
+  
+  #tabla1{
+    margin-left: auto;
+    margin-right: auto;
+    thead {
+      display: none;
+    }
+    tbody {
+      #mobile-id{
+        display: block;
+      }
+      
+      tr {
+        td:nth-child(2){
+          display: none;
+        }
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      td{
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+	
+
+/* Modal*/ 
+#borde{
+  border: 1em solid #E2E072;
+}
+
+#idEmp{
+  background-color: #05314F;
+  color:white;
+  width: 5em;
+  border-radius: 0 0 20px 0;
+  text-align: center;
+  font-size:22px;
+  position: relative;
+  right:16px;
+  bottom:16px;
+}
+
+.datos{
+  background-color: #05314F;
+  color:white;
+  font-size:22px;
+  margin-bottom: 10px;
+}
+
+/* /Modal */
+  
+  
+
+
+
+ 
+  
+  
+  
+

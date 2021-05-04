@@ -5,6 +5,7 @@ import { LoginService } from 'src/app/login/services/login.service';
 import { ProfileService } from '../services/profile.service';
 import * as $ from "jquery";
 import { Router } from '@angular/router';
+declare var $:any;
 
 @Component({
   selector: 'app-change-pass',
@@ -29,9 +30,9 @@ export class ChangePassComponent implements OnInit {
         data => {
          console.log(data);
          if(data[0]==true){
-          this.succes(data);
-        
-          this.router.navigate(['/dashboard/profile']);
+           $('#alertBox').html('');
+           $('#exampleModalCenter').modal('show');
+         
          }else{
           this.errChange(data);
          }
@@ -46,6 +47,7 @@ export class ChangePassComponent implements OnInit {
   }
 
     succes(dato) {
+      /*
     $('#alertBox').html('');
     let caja;
     caja = $('<div>',{
@@ -65,9 +67,15 @@ export class ChangePassComponent implements OnInit {
       })
     );
     $('#alertBox').append(caja);
-       
+       */
+    
 
   }
+  
+  hide(){
+    $('#exampleModalCenter').fadeOut(2000).modal('hide');
+  }
+ 
   errChange(dato) {
     $('#alertBox').html('');
     let caja;
@@ -92,3 +100,4 @@ export class ChangePassComponent implements OnInit {
 
   }
 }
+
