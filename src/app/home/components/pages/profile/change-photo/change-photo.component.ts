@@ -41,8 +41,9 @@ export class ChangePhotoComponent implements OnInit {
     this.profileService.changeIMG(this.imgForm.value)
       .subscribe(
         res => {
-        
+          console.log(res);
           $('#exampleModalCenter').modal('show');
+        
         },
         error => {
           console.log(error);

@@ -1,7 +1,7 @@
 <?php
 include_once("../database.php");
 $postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
+
 if (isset($postdata) && !empty($postdata)) {
     $folderPath = '../../uploads/';
     $request = json_decode($postdata);
@@ -13,7 +13,8 @@ if (isset($postdata) && !empty($postdata)) {
     $image_parts = explode(";base64,", $request->img->fileSource);
     
     $image_type_aux = explode("image/", $image_parts[0]);
-
+    
+    
     $image_type = $image_type_aux[1];
     
     $image_base64 = base64_decode($image_parts[1]);
@@ -22,7 +23,9 @@ if (isset($postdata) && !empty($postdata)) {
         $file = $folderPath . $uniqueid . '.' . $image_type;
         $fileDB = $uniqueid.'.'.$image_type;
         $sql = "UPDATE users SET img_profile='$fileDB' WHERE id='$token'";
+        
         if($result= mysqli_query($mysqli, $sql)){
+            
             if (file_put_contents($file, $image_base64)) {
                 echo json_encode(true);
             } else {
@@ -38,4 +41,5 @@ if (isset($postdata) && !empty($postdata)) {
     // } else {
     //     echo json_encode(false);
     // }
+    
 }
