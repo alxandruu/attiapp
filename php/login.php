@@ -3,7 +3,7 @@ include_once("database.php");
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 if (isset($postdata) && !empty($postdata)) {
-    $pwd = mysqli_real_escape_string($mysqli, trim($request->password));
+    $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->password)));
     $username = mysqli_real_escape_string($mysqli, trim($request->username));
     $sql = "SELECT * FROM users where username='$username' and password='$pwd'";
     if ($result = mysqli_query($mysqli, $sql)) {

@@ -21,7 +21,6 @@ export class NavbarComponent implements OnInit {
     .pipe(first())
       .subscribe(
         data => { 
-          console.log(data);
           let img: string = (data["img_profile"] == '')? 'default.jpg':data["img_profile"]; 
           this.name = data["name"];
           this.profile_img = '../../../../assets/img/users/' + img;
