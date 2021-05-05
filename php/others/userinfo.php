@@ -15,11 +15,10 @@ if (isset($postdata) && !empty($postdata)) {
         // FILE MOVE
         $source = '../../uploads/' . $result["img_profile"];
         $destination = '../../src/assets/img/users/' . $result["img_profile"];
-        if (copy($source, $destination)) {
-            echo json_encode($result);
-        } else {
-            http_response_code(404);
+        if (!file_exists($destination)) {
+            copy($source, $destination);
         }
+        echo json_encode($result);    
     } else {
         http_response_code(404);
     }
