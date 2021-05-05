@@ -16,7 +16,7 @@ if (isset($postdata) && !empty($postdata)) {
             $rta = preg_match($er, $pnew);
             if ($rta === 0) {
                 echo json_encode([false, "Introduce un formato correcto en la nueva contraseña por favor."]);
-            } else if (mysqli_fetch_assoc($result)['password'] === $pact) {
+            } else if (mysqli_fetch_assoc($result)['password'] === md5($pact)) {
 
                 if ($pact === $pnew) {
                     echo json_encode([false, "Las dos contraseñas son iguales"]);
