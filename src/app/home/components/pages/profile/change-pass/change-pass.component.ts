@@ -5,6 +5,7 @@ import { LoginService } from 'src/app/login/services/login.service';
 import { ProfileService } from '../services/profile.service';
 import * as $ from "jquery";
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 declare var $:any;
 
 @Component({
@@ -31,10 +32,28 @@ export class ChangePassComponent implements OnInit {
          console.log(data);
          if(data[0]==true){
            $('#alertBox').html('');
-           $('#exampleModalCenter').modal('show');
+           Swal.fire({
+            title: data[1],
+            icon: 'success',
+            allowOutsideClick: false,
+            allowEscapeKey:false,
+            allowEnterKey:false,
+            confirmButtonText: 'Continuar'
+          }).then((result) => {
+            this.router.navigate(['/dashboard/profile']);
+          })
+
+          
          
          }else{
-          this.errChange(data);
+          Swal.fire({
+            title: data[1],
+            icon: 'error',
+            allowOutsideClick: false,
+            allowEscapeKey:false,
+            allowEnterKey:false,
+            confirmButtonText: 'Continuar'
+          })
          }
         },
         error => {
@@ -46,58 +65,6 @@ export class ChangePassComponent implements OnInit {
   ngOnInit(): void {
   }
 
-    succes(dato) {
-      /*
-    $('#alertBox').html('');
-    let caja;
-    caja = $('<div>',{
-      'class':"alert alert-success alert-dismissible fade show  d-flex",
-      'role':"alert"
-    }).append(
-      $('<img>',{
-        'src':"../../assets/icons/alert.svg",
-        'class':"me-2"
-      }),
-      $('<span>').text(dato[1]),
-      $('<button>',{
-        'type':"button",
-        'class':"btn-close",
-        'data-bs-dismiss':"alert",
-        'aria-label':"Close"
-      })
-    );
-    $('#alertBox').append(caja);
-       */
     
-
-  }
-  
-  hide(){
-    $('#exampleModalCenter').modal('hide');
-  }
- 
-  errChange(dato) {
-    $('#alertBox').html('');
-    let caja;
-    caja = $('<div>',{
-      'class':"alert alert-danger alert-dismissible fade show  d-flex",
-      'role':"alert"
-    }).append(
-      $('<img>',{
-        'src':"../../assets/icons/alert.svg",
-        'class':"me-2"
-      }),
-      $('<span>').text(dato[1]),
-      $('<button>',{
-        'type':"button",
-        'class':"btn-close",
-        'data-bs-dismiss':"alert",
-        'aria-label':"Close"
-      })
-    );
-    $('#alertBox').append(caja);
-       
-
-  }
 }
 
