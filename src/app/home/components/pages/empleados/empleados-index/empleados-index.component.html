@@ -1,9 +1,5 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-  integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-
-<div class="d-flex justify-content-between mx-5 p-4 options">
-  <div class=" mt-2" id="buscador">
+<div class="d-flex justify-content-between mx-5  options">
+  <div id="buscador">
     <span>Buscar:</span> <input type="text" placeholder="Nombre del empleado">
   </div>
 
@@ -11,108 +7,32 @@
     <button class="px-5 btn " [routerLink]="['/dashboard/empleados/add-empleado']">Añadir empleado</button>
   </div>
 </div>
-<!-- class="infor" data-bs-toggle="modal" data-bs-target="#exampleModal" <i class="fas fa-edit me-5"></i><i class="far fa-trash-alt"></i>-->
 
-<table class="mx-auto" style="width: 95%;" id="tabla1">
+
+<table class="mx-auto" style="width: 95%;" id="tabla">
   <thead>
-    <tr id="sombra">
-      <th>Categoría</th>
-      <th>Euros</th>
-      <th>NOMBRE</th>
+    <tr>
+      <th >#</th>
+      <th>Nombre</th>
       <th>DNI</th>
-      <th>SUELDO</th>
-
+      <th>Sueldo</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
 
     <span class="display-5" id="mobile-id">ID: 1001</span>
-    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-
-      <td> <i class="fas fa-edit me-5"></i><i class="far fa-trash-alt"></i></td>
+    <tr>
       <td>1001</td>
-      <td>Antonio Fernandez </td>
-      <td>12390420G</td>
-      <td>5436</td>
-
-    </tr>
-
-
-    <span class="display-5" id="mobile-id">ID: 1002</span>
-    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-      
-      <td> <i class="fas fa-edit me-5"></i><i class="far fa-trash-alt"></i></td>
-      <td>1002</td>
       <td>Antonio Fernandez</td>
-      <td>12390420G</td>
-      <td>5436</td>
+      <td>12390420-G</td>
+      <td>5436,23 €</td>
+      <td><i class="fas fa-eye  me-3"></i><i class="fas fa-edit me-3 "></i><i class="far fa-trash-alt"></i></td>
     </tr>
 
-    <span class="display-5" id="mobile-id">ID: 1002</span>
-    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-      
-      <td> <i class="fas fa-edit me-5"></i><i class="far fa-trash-alt"></i></td>
-      <td>1002</td>
-      <td>Antonio Fernandez</td>
-      <td>12390420G</td>
-      <td>5436</td>
-    </tr>
-    <span class="display-5" id="mobile-id">ID: 1002</span>
-    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-      
-      <td> <i class="fas fa-edit me-5"></i><i class="far fa-trash-alt"></i></td>
-      <td>1002</td>
-      <td>Antonio Fernandez</td>
-      <td>12390420G</td>
-      <td>5436</td>
-    </tr>
-    <span class="display-5" id="mobile-id">ID: 1002</span>
-    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-      
-      <td> <i class="fas fa-edit me-5"></i><i class="far fa-trash-alt"></i></td>
-      <td>1002</td>
-      <td>Antonio Fernandez</td>
-      <td>12390420G</td>
-      <td>5436</td>
-    </tr>
+
+
+
 
   </tbody>
 </table>
-
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-body m-2" id="borde">
-        <div id="idEmp" class="px-2">
-          1001
-        </div>
-        <div id="grupo" class="p-3">
-          <div class="datos py-1 px-3 ">
-            NOMBRE:
-          </div>
-          <div class="datos py-1 px-3 ">
-            DNI:
-          </div>
-          <div class="datos py-1 px-3 ">
-            SUELDO:
-          </div>
-          <div class="datos py-1 px-3 ">
-            TELF:
-          </div>
-          <div class="datos py-1 px-3 ">
-            PUESTO:
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
