@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { ChangePassComponent } from './home/components/pages/profile/change-pass/change-pass.component';
 import { ChangePhotoComponent } from './home/components/pages/profile/change-photo/change-photo.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 
 
@@ -24,6 +25,7 @@ import { ChangePhotoComponent } from './home/components/pages/profile/change-pho
     NavbarComponent,
     ChangePassComponent,
     ChangePhotoComponent,
+    DashboardComponent,
   
   ],
   imports: [

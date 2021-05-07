@@ -1,0 +1,26 @@
+// Core
+
+h1 {
+    font-size: 38px;
+    color: #05314f;
+    font-weight: 500;
+    font-family: "Play", sans-serif;
+}   
+.box {
+    background: linear-gradient(42.45deg, #1bcf48 26%, rgb(197, 255, 179) 100%);
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    &>*{
+        color: white;
+    }
+   
+}
+@media (max-width: 767px) {
+    #img-logo {
+        display: none;
+    }
+    h1 {
+        display: none;
+    }
+}
