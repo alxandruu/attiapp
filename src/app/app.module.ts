@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +28,7 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
     AddEmpleadoComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
