@@ -15,18 +15,16 @@
       <th >#</th>
       <th>Nombre</th>
       <th>DNI</th>
-      <th>Sueldo</th>
+      <th>Sueldo x Año</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-
-    <span class="display-5" id="mobile-id">ID: 1001</span>
-    <tr>
-      <td>1001</td>
-      <td>Antonio Fernandez</td>
-      <td>12390420-G</td>
-      <td>5436,23 €</td>
+    <tr *ngfor="let empleado of empleados">
+      <td>{{empleado.id}}</td>
+      <td>hola</td>
+      <td>{{empleado.dni}}</td>
+      <td>{{empleado.salary}} €</td>
       <td style="width: 10%;"><i class="fas fa-eye  me-3"></i><i class="fas fa-edit me-3 "></i><i class="far fa-trash-alt"></i></td>
     </tr>
 
