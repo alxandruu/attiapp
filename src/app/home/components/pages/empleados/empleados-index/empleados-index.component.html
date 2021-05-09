@@ -1,13 +1,23 @@
 <div class="d-flex justify-content-between mx-5  options">
   <div id="buscador">
-    <span>Buscar:</span> <input type="text" placeholder="Nombre del empleado">
+    <span>Buscar:</span> <input type="text" placeholder="Nombre del empleado" #txtBuscar (keyup)="buscarEmpleado(txtBuscar.value)" >
   </div>
 
   <div id="add">
     <button class="px-5 btn " [routerLink]="['/dashboard/empleados/add-empleado']">Añadir empleado</button>
   </div>
+  
 </div>
+<div class="mx-5 my-3">
+<button class="btn btn-primary" (click)="prevPage();">
+  Anteriores
+</button>
+&nbsp;
+<button class="btn btn-primary" (click)="nextPage();" [disabled]="(empleados | filtro:page:buscar).length===0">
+  Siguientes
 
+</button>
+</div>
 
 <table class="mx-auto" style="width: 95%;" id="tabla">
   <thead>
@@ -20,7 +30,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let empleado of empleados">
+    <tr *ngFor="let empleado of empleados | filtro:page:buscar">
       <td>{{empleado.id}}</td>
       <td>{{empleado.name}} {{empleado.surname}}</td>
       <td>{{empleado.dni}}</td>

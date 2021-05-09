@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Empleado } from 'src/app/interfaces/empleados.interfaces';
 import { EmpleadoService } from '../services/empleado.service';
 
 
-interface Empleado {
-  id: number;
-  name: string;
-  surname: string;
-  dni: string;
-  salary: number;
-  phone_number: number;
-  position: string;
-
-}
 
 @Component({
   selector: 'app-empleados-index',
@@ -20,6 +12,8 @@ interface Empleado {
 })
 export class EmpleadosIndexComponent implements OnInit {
   empleados: Empleado[];
+  public page: number = 0;
+  public buscar: string = '';
   constructor(private empleadoService: EmpleadoService) { }
 
   ngOnInit(): void {
@@ -37,5 +31,22 @@ export class EmpleadosIndexComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  nextPage(){
+
+    this.page += 8;
+  }
+
+  prevPage(){
+    if(this.page > 0){
+      this.page -=8;
+    }
+  }
+  
+  buscarEmpleado(buscar: string){
+    this.page=0; //Para que al darle siguiente página no continue si no hay más paginas
+    this.buscar = buscar;
+   
   }
 }

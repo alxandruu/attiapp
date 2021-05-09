@@ -24,6 +24,8 @@ import { EmpleadosComponent } from './home/components/pages/empleados/empleados.
 import { EmpleadosIndexComponent } from './home/components/pages/empleados/empleados-index/empleados-index.component';
 import { AddEmpleadoComponent } from './home/components/pages/empleados/add-empleado/add-empleado.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
+import { FiltroPipe } from './home/components/pages/empleados/empleados-index/pipes/filtro.pipe';
+
 
 
 
@@ -42,7 +44,9 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
     DashboardComponent,
     EmpleadosComponent,
     EmpleadosIndexComponent,
-    AddEmpleadoComponent
+    AddEmpleadoComponent,
+    FiltroPipe,
+   
   ],
   imports: [
 
