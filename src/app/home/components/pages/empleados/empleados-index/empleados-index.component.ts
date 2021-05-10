@@ -25,7 +25,7 @@ export class EmpleadosIndexComponent implements OnInit {
       data => {
        
         this.empleados = data;
-        console.log(this.empleados);
+       
       },
       error => {
         console.log(error);
