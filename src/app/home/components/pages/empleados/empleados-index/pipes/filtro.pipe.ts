@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Empleado } from 'src/app/interfaces/empleados.interfaces';
+import { Empleado } from 'src/app/_interfaces/empleados.interfaces';
 
 
 @Pipe({
