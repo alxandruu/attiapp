@@ -7,93 +7,97 @@
 #borde{
     border: 1em solid #E2E072;
 }
+#btn-volver {
+  font-size: 3.5rem;
+  color: #05314f;
+  
+}
+#btn-volver:hover {
+  color: #e2e072;
+}
+#confirm{
+    position:relative;
+    left: 580px;
+    bottom: 65px;
+    height: 65px;
+}
+.box {
+  background-color: rgba(226, 224, 114, 0.6);
+  border: 3px solid #05314f;
+  border-radius: 1rem;
+  form {
+      border-radius: 1rem;
+      border: 2.3px dotted #05314f;
+      label {
+          span {
+              font-size: 20px;
+          }
+          input {
+              border-radius: 1rem;
+              padding: 0.6rem 1rem;
+              width: 250px;
+              margin-left: 0.7rem;
+              background-color: #e5e5e5;
+              border: none;
+              outline: none;
+          }
+      }
+      label + label {
+          margin-top: 1rem;
+      }
+      .btn-custom {
+          height: 50px;
+          width: 291px;
+          border-radius: 40px;
+          color: white;
+          background-color: #05314f;
+          border: 2px solid black;
+      }
 
-#campos{
-    font-size:30px;      
+      .btn-custom:hover {
+          background-color: #e2e072;
+          color: black;
+      }
+  }
 }
 
-input{
-    height: 42px; 
-    font-size:18px;
-    padding-left: 20px;
-    border-radius:40px;
-   background-color: #E5E5E5;
-   border: none;
-   width:auto;
-   outline: none;
-  }
-
-
-  #add{
-    button{
-      height: 4em; 
-      font-size:18px;
-      border-radius:40px;
-      color:white;
-     background-color: #05314F;
-     border: 2px solid black;
-    }
+#botonPass{
+  background-color: #e2e072;
   
-    button:hover{
-      background-color: #E2E072;
-      color:black;
-    }
-  }
-  
-.button2{
-  display:none;
+
 }
-
-@media (max-width:760px){
-  img{
-    width:70%;
-  }
+.modal-content{
+  background-color: #05314f;
+  text-align: center;
+  color:white;
+  font-weight: bold;
 }
-
-  @media (max-width:800px){
-    img{
-      width:80%;
-    }
-  }
-
-  
-  @media (max-width:767px){
-    img{
-      display:none
-    }
-    #borde{
+@media (max-width: 576px) {
+  #f1 {
       text-align: center;
-    }
+      button {
+          margin-left: auto;
+          margin-right: auto;
+      }
   }
-
-  .row{
-    margin: 16px;
+  .box {
+      form {
+          label {
+              input {
+                  width: 100%;
+                  margin-left: 0rem;
+              }
+              span + input {
+                  margin-top: 0.8rem;
+              }
+          }
+          .btn-custom {
+              width: 70%;
+              text-align: center;
+            
+              span {display: none;}
+          }
+          
+      }
   }
-
-  @media (max-width:372px){
-    #borde{
-      border: 10px solid #E2E072;
-    }
-  }
-
-  @media (max-width:320px){
-    input{
-      padding-left:14px ;
-      font-size: 16px;
-      width: 90%;
-      
-    }
-  }
-
-  @media (max-width: 300px){
-    #borde{
-      border: 6px solid #E2E072;
-    }
-    input{
-      padding-left:14px ;
-      font-size: 12px;
-      width: 80%;
-    }
-  }
-
-  
+}

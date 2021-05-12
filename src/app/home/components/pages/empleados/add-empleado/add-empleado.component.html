@@ -1,36 +1,36 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+<div id="f1">
+  <button class="btn mx-5" id="btn-volver" type="button" routerLink="..">
+      <i class="fas fa-chevron-circle-left"></i>
+  </button>
+</div>
 
 
-
-
-<form class=" p-4 row m-4" id="borde">
-
-    <div class="col-md-8" id="campos">
-      <div class="mb-2">
-        <span>Nombre: </span> <input  type="text" placeholder="Ej: Adrián Rodríguez">
-      </div>
-      <div class="mb-2">
-        <span>DNI: </span> <input type="text" placeholder="Ej: Adrián Rodríguez">
-      </div>
-      <div class="mb-2">
-        <span>Sueldo: </span> <input type="text" placeholder="Ej: Adrián Rodríguez">
-      </div>
-      <div class="mb-2">
-        <span>Teléfono: </span> <input type="text" placeholder="Ej: Adrián Rodríguez">
-      </div>
-      <div class="mb-2">
-        <span>Puesto: </span> <input type="text" placeholder="Ej: Adrián Rodríguez">
-      </div>
-      <div class="button2" id="add">
-        <button class="px-5 mt-3">Añadir </button>
-      </div>
-  
-    </div>
-  
-    <div class="col-md-4">
-      <img src="../../../assets/logo.svg" width="241" height="124">
-      <div class="add button1 mt-5" id="add">
-        <button type="submit"class="btn px-5 mt-3 mx-auto">Añadir </button>
-      </div>
-    </div>
-  </form>
-  
+<div class="container  ">
+  <div class="box p-4 mb-2">
+      <h2 class="me-auto">Añadir Empleado</h2>
+      <form class=" mt-4 bg-light p-4 "
+    >
+          <div class="d-flex flex-column ms-5">
+              <label ><span>Nombre:</span><input type="text"
+                      placeholder="Introduce nombre" name="name" formControlName="name"></label>
+              <label><span>Apellido:</span><input type="text"
+                      placeholder="Introduce apellido" name="surname" formControlName="surname"></label>
+              <label><span>DNI:     </span><input class="ms-5" type="text"
+                        placeholder="Introduce DNI" name="DNI" formControlName="DNI"></label>
+              <label><span>Salario:</span><input class="ms-4" type="text"
+                          placeholder="Introduce salario" name="salary" formControlName="salary"></label>
+              <label><span>Teléfono:</span><input class="ms-2" type="text"
+                            placeholder="Introduce numero de teléfono" name="telf" formControlName="telf"></label>
+              <label><span>Puesto:</span><input class="ms-4" type="text"
+                              placeholder="Introduce puesto" name="position" formControlName="position"></label>
+          </div>
+        
+        
+          <button type="submit" class="btn btn-custom  ms-5" id="confirm" >
+            Agregar 
+        </button>
+      </form>
+  </div>
+</div>
