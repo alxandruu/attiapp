@@ -52,4 +52,7 @@ export class EmpleadosIndexComponent implements OnInit {
     this.buscar = buscar;
 
   }
+
+
+
 }
