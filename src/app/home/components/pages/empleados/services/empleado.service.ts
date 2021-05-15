@@ -15,9 +15,6 @@ export class EmpleadoService {
   }
 
   public addEmployee(data) {
-    return this.http.post(this.baseUrl + '/newemployee.php', { data })
-      .pipe(map(data => {
-        return data;
-      }));
+    return this.http.post(this.baseUrl + '/newemployee.php', { data });
   }
 }
