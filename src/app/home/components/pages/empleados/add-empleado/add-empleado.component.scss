@@ -15,12 +15,8 @@
 #btn-volver:hover {
   color: #e2e072;
 }
-#confirm{
-    position:relative;
-    left: 580px;
-    bottom: 65px;
-    height: 65px;
-}
+
+
 .box {
   background-color: rgba(226, 224, 114, 0.6);
   border: 3px solid #05314f;
@@ -43,7 +39,8 @@
           }
       }
       label + label {
-          margin-top: 1rem;
+         margin: 1rem;
+          
       }
       .btn-custom {
           height: 50px;

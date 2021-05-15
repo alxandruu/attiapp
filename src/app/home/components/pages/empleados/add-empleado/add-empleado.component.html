@@ -1,36 +1,50 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 <div id="f1">
   <button class="btn mx-5" id="btn-volver" type="button" routerLink="..">
-      <i class="fas fa-chevron-circle-left"></i>
+    <i class="fas fa-chevron-circle-left"></i>
   </button>
 </div>
 
 
 <div class="container  ">
   <div class="box p-4 mb-2">
-      <h2 class="me-auto">Añadir Empleado</h2>
-      <form class=" mt-4 bg-light p-4 "
-    >
-          <div class="d-flex flex-column ms-5">
-              <label ><span>Nombre:</span><input type="text"
-                      placeholder="Introduce nombre" name="name" formControlName="name"></label>
-              <label><span>Apellido:</span><input type="text"
-                      placeholder="Introduce apellido" name="surname" formControlName="surname"></label>
-              <label><span>DNI:     </span><input class="ms-5" type="text"
-                        placeholder="Introduce DNI" name="DNI" formControlName="DNI"></label>
-              <label><span>Salario:</span><input class="ms-4" type="text"
-                          placeholder="Introduce salario" name="salary" formControlName="salary"></label>
-              <label><span>Teléfono:</span><input class="ms-2" type="text"
-                            placeholder="Introduce numero de teléfono" name="telf" formControlName="telf"></label>
-              <label><span>Puesto:</span><input class="ms-4" type="text"
-                              placeholder="Introduce puesto" name="position" formControlName="position"></label>
+    <h2 class="me-auto">Añadir Empleado</h2>
+    <form class=" mt-4 bg-light p-4 ">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label><span>Nombre:</span><input type="text" placeholder="Introduce nombre" name="name"
+            formControlName="name"></label>
+        <label><span>Apellido:</span><input type="text" placeholder="Introduce apellido" name="surname"
+            formControlName="surname"></label>
+        <label><span>DNI:</span><input  type="text" placeholder="Introduce DNI" name="DNI"
+            formControlName="DNI"></label>
+        <label><span>Salario:</span><input  type="text" placeholder="Introduce salario" name="salary"
+            formControlName="salary"></label>
+        <label><span>Teléfono:</span><input  type="text" placeholder="Introduce numero de teléfono"
+            name="telf" formControlName="telf"></label>
+        <label><span>Puesto:</span><input  type="text" placeholder="Introduce puesto" name="position"
+            formControlName="position"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-custom  " id="confirm">
+              Agregar
+            </button>
           </div>
+         
+        </div>
+      </div>
+
+
+      
+
+    
         
-        
-          <button type="submit" class="btn btn-custom  ms-5" id="confirm" >
-            Agregar 
-        </button>
-      </form>
+      
+      
+    </form>
   </div>
 </div>
