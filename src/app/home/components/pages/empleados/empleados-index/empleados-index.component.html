@@ -1,28 +1,29 @@
 <div class="d-flex justify-content-between mx-5  options">
   <div id="buscador">
-    <span>Buscar:</span> <input type="text" placeholder="Nombre del empleado" #txtBuscar (keyup)="buscarEmpleado(txtBuscar.value)" >
+    <span>Buscar:</span> <input type="text" placeholder="Nombre del empleado" #txtBuscar
+      (keyup)="buscarEmpleado(txtBuscar.value)">
   </div>
 
   <div id="add">
     <button class="px-5 btn " [routerLink]="['/dashboard/empleados/add-empleado']">Añadir empleado</button>
   </div>
-  
+
 </div>
 <div class="mx-5 my-3">
-<button class="btn btn-primary" (click)="prevPage();">
-  Anteriores
-</button>
-&nbsp;
-<button class="btn btn-primary" (click)="nextPage();" [disabled]="(empleados | filtro:page:buscar).length===0">
-  Siguientes
+  <button class="btn btn-primary" (click)="prevPage();">
+    Anteriores
+  </button>
+  &nbsp;
+  <button class="btn btn-primary" (click)="nextPage();" [disabled]="(empleados | filtro:page:buscar).length===0">
+    Siguientes
 
-</button>
+  </button>
 </div>
 
 <table class="mx-auto" style="width: 95%;" id="tabla">
   <thead>
     <tr>
-      <th >#</th>
+      <th>#</th>
       <th>Nombre</th>
       <th>DNI</th>
       <th>Sueldo x Año</th>
@@ -30,15 +31,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let empleado of empleados | filtro:page:buscar" >
-     
-      <td>{{empleado.id}}</td>
+    <tr *ngFor="let empleado of empleados | filtro:page:buscar">
+
+      <td id="empID">{{empleado.id}}</td>
       <td>{{empleado.name}} {{empleado.surname}}</td>
       <td>{{empleado.dni}}</td>
       <td>{{empleado.salary}} €</td>
-      <td style="width: 10%;"><i class="fas fa-eye  me-3"></i><i class="fas fa-edit me-3 "></i><i class="far fa-trash-alt"></i></td>
+      <td style="width: 10%;">
+        <i class="fas fa-eye  me-3"></i><i class="fas fa-edit me-3 "></i>
+        <i class="far fa-trash-alt" (click)="deleteEmployee(empleado.id)"></i>
+      </td>
     </tr>
-    <tr *ngIf="(empleados | filtro:page:buscar).length===0" style="text-align: center; background-color: white; margin-left: 2em;">
+    <tr *ngIf="(empleados | filtro:page:buscar).length===0"
+      style="text-align: center; background-color: white; margin-left: 2em;">
       <td></td>
       <td></td>
       <td style="color: black; text-align: center;">No hay más resultados</td>

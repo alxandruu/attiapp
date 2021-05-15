@@ -17,4 +17,8 @@ export class EmpleadoService {
   public addEmployee(data) {
     return this.http.post(this.baseUrl + '/newemployee.php', { data });
   }
+
+  public delEmployee(id) {
+    return this.http.post(this.baseUrl + '/delemployee.php', { id });
+  }
 }

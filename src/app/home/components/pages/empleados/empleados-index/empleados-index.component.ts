@@ -26,9 +26,7 @@ export class EmpleadosIndexComponent implements OnInit {
   private getEmpleados() {
     this.empleadoService.getEmpleados().subscribe(
       data => {
-
         this.empleados = data;
-        console.log(data);
       },
       error => {
         console.log(error);
@@ -53,6 +51,18 @@ export class EmpleadosIndexComponent implements OnInit {
 
   }
 
+  public deleteEmployee(empid){
+    console.log(empid);
+    this.empleadoService.delEmployee(empid)
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+      )
+  }
 
 
 }
