@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EmpleadoService } from '../services/empleado.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-empleado',
@@ -27,7 +28,17 @@ export class AddEmpleadoComponent implements OnInit {
     this.empleadoService.addEmployee(this.empleadoForm.value)
     .subscribe(
       data => {
-        console.log(data);
+        if(data==true){
+          Swal.fire({
+            title: "Empleado agregado correctamente",
+            icon: 'success',
+            allowOutsideClick: false,
+            allowEscapeKey:false,
+            allowEnterKey:false,
+            confirmButtonText: 'Continuar'
+          })
+        }
+       
       },
       error => {
         console.log(error)
