@@ -13,30 +13,31 @@
     <form class=" mt-4 bg-light p-4" [formGroup]="empleadoForm" (ngSubmit)="postEmpleadoForm()">
       <div class="row mb-3">
         <div class="col-md-4 ">
-            <label ><span>Nombre:</span><input type="text" placeholder="Introduce nombre" name="name"
-            formControlName="name"></label>
-              
+          <label><span>Nombre:</span><input type="text" placeholder="Introduce nombre" name="name"
+              formControlName="name"></label>
         </div>
         <div class="col-md-4 ">
           <label><span>Apellido:</span><input type="text" placeholder="Introduce apellido" name="surname"
-            formControlName="surname"></label>
+              formControlName="surname"></label>
         </div>
         <div class="col-md-4 ">
-           
-        <label><span>DNI:</span><input  type="text" placeholder="Introduce DNI" name="DNI"
-            formControlName="dni"></label>
-        <label><span>Salario:</span><input  type="text" placeholder="Introduce salario" name="salary"
-            formControlName="salary"></label>
-        <label><span>Teléfono:</span><input  type="text" placeholder="Introduce numero de teléfono"
-            name="telf" formControlName="telf"></label>
+          <label><span>DNI:</span><input type="text" placeholder="Introduce DNI" name="DNI"
+              formControlName="dni"></label>
         </div>
-        <div class="col-md-4 ">
-          <label><span>Puesto:</span><input  type="text" placeholder="Introduce puesto" name="position"
-            formControlName="position"></label>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label><span>Salario:</span><input type="text" placeholder="Introduce salario" name="salary"
+              formControlName="salary"></label>
         </div>
-     
-    
-      
+        <div class="col-md-4">
+          <label><span>Teléfono:</span><input type="text" placeholder="Introduce numero de teléfono" name="telf"
+              formControlName="telf"></label>
+        </div>
+        <div class="col-md-4">
+          <label><span>Puesto:</span><input type="text" placeholder="Introduce puesto" name="position"
+              formControlName="position"></label>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -45,17 +46,17 @@
               Agregar
             </button>
           </div>
-         
+
         </div>
       </div>
 
 
-      
 
-    
-        
-      
-      
+
+
+
+
+
     </form>
   </div>
 </div>
