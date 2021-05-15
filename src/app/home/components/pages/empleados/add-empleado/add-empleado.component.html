@@ -10,7 +10,7 @@
 <div class="container  ">
   <div class="box p-4 mb-2">
     <h2 class="me-auto">Añadir Empleado</h2>
-    <form class=" mt-4 bg-light p-4 ">
+    <form class=" mt-4 bg-light p-4" [formGroup]="empleadoForm" (ngSubmit)="postEmpleadoForm()">
       <div class="row mb-3">
         <div class="col-md-12">
           <label><span>Nombre:</span><input type="text" placeholder="Introduce nombre" name="name"
@@ -18,7 +18,7 @@
         <label><span>Apellido:</span><input type="text" placeholder="Introduce apellido" name="surname"
             formControlName="surname"></label>
         <label><span>DNI:</span><input  type="text" placeholder="Introduce DNI" name="DNI"
-            formControlName="DNI"></label>
+            formControlName="dni"></label>
         <label><span>Salario:</span><input  type="text" placeholder="Introduce salario" name="salary"
             formControlName="salary"></label>
         <label><span>Teléfono:</span><input  type="text" placeholder="Introduce numero de teléfono"

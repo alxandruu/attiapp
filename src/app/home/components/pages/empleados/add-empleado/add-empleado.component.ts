@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { EmpleadoService } from '../services/empleado.service';
 
 @Component({
   selector: 'app-add-empleado',
@@ -6,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-empleado.component.scss']
 })
 export class AddEmpleadoComponent implements OnInit {
-
-  constructor() { }
+  empleadoForm: FormGroup;
+  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService) { 
+    this.empleadoForm = this.fb.group({
+      name: [''],
+      surname: [''],
+      dni: [''],
+      salary: [''],
+      telf: [''],
+      position: ['']
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  public postEmpleadoForm(){
+    this.empleadoService.addEmployee(this.empleadoForm.value)
+    .subscribe(
+      data => {
+
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
