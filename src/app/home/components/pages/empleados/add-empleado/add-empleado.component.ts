@@ -27,7 +27,7 @@ export class AddEmpleadoComponent implements OnInit {
   public postEmpleadoForm(){
     this.empleadoService.addEmployee(this.empleadoForm.value)
     .subscribe(
-      data => {      
+      data => {
         if(data==true){
           Swal.fire({
             title: "Empleado agregado correctamente",
