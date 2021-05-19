@@ -46,8 +46,7 @@
 #tabla {
   border-collapse: separate;
   border-spacing: 0px 15px;
-  
- 
+
   tr {
     th {
       background-color: #2f2d2c;
@@ -87,12 +86,34 @@
   tbody {
     tr {
       background-color: #05314f;
-      &:hover {
-      }
     }
   }
 }
 
+#paginbtn {
+  button {
+    color: #05314f;
+
+    font-weight: bold;
+    &:hover {
+      transition: color 200ms  ease;
+      color: #e2e072;
+      
+      svg path {
+        fill: #e2e072;
+        transition: fill 200ms ease;
+      }
+    }
+    svg path {
+      fill: #05314f;
+      transition: fill 200ms  ease;
+    }
+    
+  }
+}
+.disabled {
+  cursor: not-allowed;
+}
 @media (max-width: 768px) {
   .options {
     display: flex;
