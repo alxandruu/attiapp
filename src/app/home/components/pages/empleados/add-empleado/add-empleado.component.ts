@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { EmpleadoService } from '../services/empleado.service';
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-add-empleado',
@@ -10,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class AddEmpleadoComponent implements OnInit {
   empleadoForm: FormGroup;
-  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService) { 
+  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private route: ActivatedRoute) { 
     this.empleadoForm = this.fb.group({
       name: [''],
       surname: [''],
@@ -27,7 +29,7 @@ export class AddEmpleadoComponent implements OnInit {
   public postEmpleadoForm(){
     this.empleadoService.addEmployee(this.empleadoForm.value)
     .subscribe(
-      data => {      
+      data => {
         if(data==true){
           Swal.fire({
             title: "Empleado agregado correctamente",
