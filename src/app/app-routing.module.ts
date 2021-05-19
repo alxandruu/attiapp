@@ -36,7 +36,7 @@ const routes: Routes = [
       {
         path: 'empleados', component: EmpleadosComponent, children: [
           { path: '', component: EmpleadosIndexComponent },
-          { path: 'add-empleado', component: AddEmpleadoComponent},
+          { path: 'agregar', component: AddEmpleadoComponent},      
         ]
       }
     ]

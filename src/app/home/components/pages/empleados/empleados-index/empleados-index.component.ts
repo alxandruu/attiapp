@@ -35,7 +35,6 @@ export class EmpleadosIndexComponent implements OnInit {
   }
 
   nextPage() {
-
     this.page += 8;
   }
 
@@ -51,7 +50,7 @@ export class EmpleadosIndexComponent implements OnInit {
 
   }
 
-  public deleteEmployee(empid) {
+  public deleteEmployee(empid): void {
     Swal.fire({
       title: '¿Estas seguro?',
       text: `Al confirmar, el usuario con ID [${empid}] será eliminado`,
@@ -69,7 +68,7 @@ export class EmpleadosIndexComponent implements OnInit {
         this.empleadoService.delEmployee(empid)
           .subscribe(
             data => {
-              if(data===true){
+              if (data === true) {
                 Swal.fire({
                   title: "Empleado eliminado correctamente",
                   icon: 'success',
@@ -80,22 +79,14 @@ export class EmpleadosIndexComponent implements OnInit {
                   confirmButtonColor: '#7dce82',
                 });
                 this.getEmpleados();
-              }             
+              }
             },
             error => {
               console.log(error);
             }
           );
-
-        
       }
     })
-
-
-
-
-
   }
-
 
 }
