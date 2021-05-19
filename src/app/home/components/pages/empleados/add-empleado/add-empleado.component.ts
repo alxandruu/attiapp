@@ -41,7 +41,15 @@ export class AddEmpleadoComponent implements OnInit {
        
       },
       error => {
-        console.log(error)
+        Swal.fire({
+          title: "Ups! hubo un error inesperado",
+          text: "Algo ha ido mal!",
+          icon: 'error',
+          allowOutsideClick: false,
+          allowEscapeKey:false,
+          allowEnterKey:false,
+          confirmButtonText: 'Continuar'
+        })
       }
     );
   }
