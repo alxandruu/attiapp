@@ -25,6 +25,9 @@ import { EmpleadosIndexComponent } from './home/components/pages/empleados/emple
 import { AddEmpleadoComponent } from './home/components/pages/empleados/add-empleado/add-empleado.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { FiltroPipe } from './home/components/pages/empleados/empleados-index/pipes/filtro.pipe';
+import { GananciasComponent } from './home/components/pages/ganancias/ganancias.component';
+import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
+import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
 
 
 
@@ -46,6 +49,9 @@ import { FiltroPipe } from './home/components/pages/empleados/empleados-index/pi
     EmpleadosIndexComponent,
     AddEmpleadoComponent,
     FiltroPipe,
+    GananciasComponent,
+    GananciasIndexComponent,
+    AddGananciaComponent,
    
   ],
   imports: [
