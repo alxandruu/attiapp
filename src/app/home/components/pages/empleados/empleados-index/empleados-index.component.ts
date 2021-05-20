@@ -46,7 +46,7 @@ export class EmpleadosIndexComponent implements OnInit {
 
   buscarEmpleado(buscar: string) {
     this.page = 0; //Para que al darle siguiente página no continue si no hay más paginas
-    this.buscar = buscar;
+    this.buscar = buscar.toUpperCase();
 
   }
 
