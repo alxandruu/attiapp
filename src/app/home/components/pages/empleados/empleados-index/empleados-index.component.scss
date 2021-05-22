@@ -40,7 +40,14 @@
     }
   }
 }
+.btn{
+  &:active,&:focus{
+    outline: none !important;
+    box-shadow: none;
 
+  }
+ 
+}
 // Tabla
 
 #tabla {

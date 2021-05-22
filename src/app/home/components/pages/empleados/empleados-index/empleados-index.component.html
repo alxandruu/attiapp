@@ -10,7 +10,7 @@
 
 </div>
 <div class="mx-5 mt-4 d-flex justify-content-between" id="paginbtn">
-  <button class="btn  d-flex align-items-center " (click)="prevPage()">
+  <button class="btn  d-flex align-items-center btn-paginate" (click)="prevPage()">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left"
       viewBox="0 0 16 16">
       <path fill-rule="evenodd"
@@ -19,7 +19,7 @@
     <span class="ms-2"> Anterior</span>
   </button>
   &nbsp;
-  <button class="btn  d-flex align-items-center" (click)="nextPage()" disabled="disabled"
+  <button class="btn  d-flex align-items-center btn-paginate" (click)="nextPage()" disabled="disabled"
     [disabled]="(empleados | filtro:page:buscar).length===0">
     <span class="me-2">Siguiente</span>
 
@@ -50,7 +50,9 @@
       <td>{{empleado.dni}}</td>
       <td>{{empleado.salary}} €</td>
       <td style="width: 10%;">
-        <i class="fas fa-eye  me-3"></i><i class="fas fa-edit me-3 "></i>
+        <i class="fas fa-eye  me-3" data-bs-toggle="modal" data-bs-target="#empModal"  
+          (click)="seeEmployee(empleado)"></i>
+        <i class="fas fa-edit me-3 "></i>
         <i class="far fa-trash-alt" (click)="deleteEmployee(empleado.id)"></i>
       </td>
     </tr>
@@ -62,3 +64,66 @@
     </tr>
   </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="empModal" tabindex="-1" aria-labelledby="empModalLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="empModalLabel">TITULO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="font-size: 1.3em;">
+        <div class="row mb-2">
+          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+            ID
+          </div>
+          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+            {{empleado.id}}
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+            NOMBRE
+          </div>
+          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+            {{empleado.name}} {{empleado.surname}}
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+            DNI
+          </div>
+          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+            {{empleado.dni}}
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+            TELÉFONO
+          </div>
+          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+           +34 {{empleado.phone_number}}
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+            SALARIO X AÑO
+          </div>
+          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+            {{empleado.salary}} €
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+            POSICION
+          </div>
+          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+            {{empleado.position}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
