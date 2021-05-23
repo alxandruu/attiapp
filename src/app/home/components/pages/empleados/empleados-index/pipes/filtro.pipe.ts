@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { filter } from 'rxjs/operators';
 import { Empleado } from 'src/app/_interfaces/empleados.interfaces';
 
 
@@ -11,8 +12,11 @@ export class FiltroPipe implements PipeTransform {
 
     if (buscar.length === 0) {
       return empleados.slice(page, page + 8);
-    } else {
-      const filterEmpleados = empleados.filter(empleados => empleados.name.includes(buscar));
+    } else {  
+      const filterEmpleados = empleados.filter(empleado => {
+        let nombre = empleado.name + ' ' + empleado.surname;
+        return nombre.includes(buscar);
+      });      
       return filterEmpleados.slice(page, page + 8);
     }
 
