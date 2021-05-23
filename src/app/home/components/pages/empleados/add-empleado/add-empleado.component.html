@@ -15,10 +15,11 @@
       <div class="row mb-3">
         <div class="col-md-4 ">
           <label><span>Nombre</span><input type="text" class="form-control" placeholder="Introduce nombre" name="name" formControlName="name"
-              [ngClass]="{'is-invalid':name.touched && name.invalid}">
+              [ngClass]="{'is-invalid':name.touched && name.invalid}"  pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð]+$">
             <div class="invalid-feedback">
               <div *ngIf="name.errors?.required">El nombre es requerido</div>
               <div *ngIf="name.errors?.minlength">El nombre debe tener más de 1 letra</div>
+              <div *ngIf="name.errors?.pattern">El nombre debe tener el formato correcto</div>
             </div>
           </label>
         </div>

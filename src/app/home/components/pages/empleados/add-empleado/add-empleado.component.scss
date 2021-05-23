@@ -11,6 +11,11 @@ h2 {
 #btn-volver {
   font-size: 3.5rem;
   color: #05314f;
+  &:active,&:focus{
+    outline: none !important;
+    box-shadow: none;
+
+  }
   
 }
 #btn-volver:hover {

@@ -38,7 +38,7 @@
       <th>#</th>
       <th>Nombre</th>
       <th>DNI</th>
-      <th>Sueldo x Año</th>
+      <th>Sueldo</th>
       <th></th>
     </tr>
   </thead>
@@ -70,56 +70,56 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="empModalLabel">TITULO</h5>
+        <h5 class="modal-title" id="empModalLabel">DETALLES</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" style="font-size: 1.3em;">
-        <div class="row mb-2">
-          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+        <div class="row ">
+          <div class="col-md-4  subtitle " >
             ID
           </div>
-          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+          <div class="col-md-8   subtitle-content" >
             {{empleado.id}}
           </div>
         </div>
 
-        <div class="row mb-2">
-          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+        <div class="row ">
+          <div class="col-md-4 subtitle ">
             NOMBRE
           </div>
-          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+          <div class="col-md-8   subtitle-content" >
             {{empleado.name}} {{empleado.surname}}
           </div>
         </div>
-        <div class="row mb-2">
-          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+        <div class="row ">
+          <div class="col-md-4 subtitle " >
             DNI
           </div>
-          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+          <div class="col-md-8   subtitle-content" >
             {{empleado.dni}}
           </div>
         </div>
-        <div class="row mb-2">
-          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+        <div class="row ">
+          <div class="col-md-4 subtitle " >
             TELÉFONO
           </div>
-          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+          <div class="col-md-8  subtitle-content" >
            +34 {{empleado.phone_number}}
           </div>
         </div>
-        <div class="row mb-2">
-          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
-            SALARIO X AÑO
+        <div class="row ">
+          <div class="col-md-4 subtitle " >
+            SALARIO
           </div>
-          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+          <div class="col-md-8  subtitle-content" >
             {{empleado.salary}} €
           </div>
         </div>
-        <div class="row mb-2">
-          <div class="col-md-4  bg-dark text-white" style="border-right: 7px solid grey;">
+        <div class="row ">
+          <div class="col-md-4  subtitle " >
             POSICION
           </div>
-          <div class="col-md-8 text-black text-end" style="background-color: rgb(224, 216, 216); font-weight: bold;">
+          <div class="col-md-8  subtitle-content" >
             {{empleado.position}}
           </div>
         </div>

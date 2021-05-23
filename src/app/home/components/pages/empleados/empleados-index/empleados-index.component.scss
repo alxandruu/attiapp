@@ -121,6 +121,33 @@
 .disabled {
   cursor: not-allowed;
 }
+
+
+//Modal ver empleado
+
+
+#empModalLabel{
+  color: #05314f;
+}
+.modal-header{
+  border-bottom: 1px solid #05314f;
+}
+.subtitle{
+  background-color: #05314f;
+  color:white;
+  border-right: 7px solid grey;
+}
+.subtitle-content{
+  background-color: rgba(226, 224, 114, 0.8);
+  
+  color:#292b2c;
+  text-align: right;
+}
+.modal-body{
+  .row+.row{
+    margin-top: 2px;
+  }
+}
 @media (max-width: 768px) {
   .options {
     display: flex;
