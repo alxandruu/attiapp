@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmpleadoService } from '../services/empleado.service';
 import Swal from 'sweetalert2';
 
@@ -12,48 +12,80 @@ import Swal from 'sweetalert2';
 })
 export class AddEmpleadoComponent implements OnInit {
   empleadoForm: FormGroup;
-  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private route: ActivatedRoute) { 
+  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private route: ActivatedRoute, private router: Router) {
     this.empleadoForm = this.fb.group({
-      name: [''],
-      surname: [''],
-      dni: [''],
-      salary: [''],
-      telf: [''],
-      position: ['']
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      surname: ['', [Validators.required, Validators.minLength(2)]],
+      dni: ['', [Validators.required]],
+      salary: ['', [Validators.required, Validators.min(0)]],
+      telf: ['', [Validators.required, Validators.maxLength(9),Validators.minLength(9)]],
+      position: ['',[Validators.required]]
     });
   }
 
   ngOnInit(): void {
   }
 
-  public postEmpleadoForm(){
-    this.empleadoService.addEmployee(this.empleadoForm.value)
-    .subscribe(
-      data => {
-        if(data==true){
-          Swal.fire({
-            title: "Empleado agregado correctamente",
-            icon: 'success',
-            allowOutsideClick: false,
-            allowEscapeKey:false,
-            allowEnterKey:false,
-            confirmButtonText: 'Continuar'
-          })
-        }
-       
-      },
-      error => {
-        Swal.fire({
-          title: "Ups! hubo un error inesperado",
-          text: "Algo ha ido mal!",
-          icon: 'error',
-          allowOutsideClick: false,
-          allowEscapeKey:false,
-          allowEnterKey:false,
-          confirmButtonText: 'Continuar'
-        })
-      }
-    );
+  public postEmpleadoForm() {
+    if (this.empleadoForm.valid) {
+      this.empleadoService.addEmployee(this.empleadoForm.value)
+        .subscribe(
+          data => {
+            if (data == true) {
+              Swal.fire({
+                title: "Empleado agregado correctamente",
+                icon: 'success',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false,
+                confirmButtonText: 'Continuar'
+              }).then((result) => {
+                this.router.navigate(['/dashboard/empleados']);
+              })
+            }else {
+              Swal.fire({
+                title: "Revise el formulario",
+                text: data[1],
+                icon: 'error',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false,
+                confirmButtonText: 'Continuar'
+              })
+            }
+          },
+          error => {
+            Swal.fire({
+              title: "Ups! hubo un error inesperado",
+              text: "Algo ha ido mal!",
+              icon: 'error',
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+              allowEnterKey: false,
+              confirmButtonText: 'Continuar'
+            })
+          }
+        );
+    } else {
+      Swal.fire({
+        title: "Revisa el formulario",
+        text: "Los campos del formulario están mal rellenados",
+        icon: 'error',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        confirmButtonText: 'Aceptar'
+      })
+    }
   }
+
+
+  // FORM GETTERS
+  get name() { return this.empleadoForm.get('name') };
+  get surname() { return this.empleadoForm.get('surname') };
+  get dni() { return this.empleadoForm.get('dni') };
+  get salary() { return this.empleadoForm.get('salary') };
+  get telf() { return this.empleadoForm.get('telf') };
+  get position() { return this.empleadoForm.get('position') };
 
 }

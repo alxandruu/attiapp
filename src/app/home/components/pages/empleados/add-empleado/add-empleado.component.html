@@ -14,29 +14,59 @@
       <div class="row mb-3">
         <div class="col-md-4 ">
           <label><span>Nombre:</span><input type="text" placeholder="Introduce nombre" name="name"
-              formControlName="name"></label>
+              formControlName="name" [ngClass]="{'is-invalid':name.touched && name.invalid}">
+            <div class="invalid-feedback">
+              <div *ngIf="name.errors.required">El nombre es requerido</div>
+              <div *ngIf="name.errors.minlength">El nombre debe tener más de 1 letra</div>
+            </div>
+          </label>
         </div>
         <div class="col-md-4 ">
           <label><span>Apellido:</span><input type="text" placeholder="Introduce apellido" name="surname"
-              formControlName="surname"></label>
+              formControlName="surname" [ngClass]="{'is-invalid':surname.touched && surname.invalid}">
+            <div class="invalid-feedback">
+              <div *ngIf="surname.errors.required">El apellido es requerido</div>
+              <div *ngIf="surname.errors.minlength">El apellido debe tener más de 1 letra</div>
+            </div>
+          </label>
         </div>
         <div class="col-md-4 ">
-          <label><span>DNI:</span><input type="text" placeholder="Introduce DNI" name="DNI"
-              formControlName="dni"></label>
+          <label><span>DNI:</span><input type="text" placeholder="Introduce DNI" name="DNI" formControlName="dni"
+              [ngClass]="{'is-invalid':dni.touched && dni.invalid}"
+              pattern="^(\d{8})([A-Za-z])|([XYZxyz]\d{6,7}[A-Za-z])$">
+            <div class="invalid-feedback">
+              <div *ngIf="dni.errors.required">El DNI o NIE es requerido</div>
+              <div *ngIf="dni.errors.pattern">El DNI o NIE debe tener el formato correcto</div>
+            </div>
+          </label>
         </div>
       </div>
       <div class="row mb-3">
         <div class="col-md-4">
-          <label><span>Salario:</span><input type="text" placeholder="Introduce salario" name="salary"
-              formControlName="salary"></label>
+          <label><span>Salario:</span><input type="number" placeholder="Introduce salario" name="salary"
+              formControlName="salary" step="any" min="0" [ngClass]="{'is-invalid':salary.touched && salary.invalid}">
+            <div class="invalid-feedback">
+              <div *ngIf="salary.errors.required">El Salario es requerido</div>
+              <div *ngIf="salary.errors.min">El Salario debe ser mayor a 0</div>
+            </div>
+          </label>
         </div>
         <div class="col-md-4">
           <label><span>Teléfono:</span><input type="text" placeholder="Introduce numero de teléfono" name="telf"
-              formControlName="telf"></label>
+              formControlName="telf" [ngClass]="{'is-invalid':telf.touched && telf.invalid}" pattern="^(\d{9})$">
+            <div class="invalid-feedback">
+              <div *ngIf="telf.errors.required">El Teléfono es requerido</div>
+              <div *ngIf="telf.errors.pattern">El Teléfono debe tener 9 números</div>
+            </div>
+          </label>
         </div>
         <div class="col-md-4">
           <label><span>Puesto:</span><input type="text" placeholder="Introduce puesto" name="position"
-              formControlName="position"></label>
+              formControlName="position" [ngClass]="{'is-invalid':position.touched && position.invalid}">
+            <div class="invalid-feedback">
+              <div *ngIf="position.errors.required">La Posicion es requerido</div>      
+            </div>
+          </label>
         </div>
       </div>
       <div class="row">

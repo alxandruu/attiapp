@@ -3,8 +3,6 @@ include_once("../database.php");
 $postdata = file_get_contents("php://input");
 
 if (isset($postdata) && !empty($postdata)) {
-    $exit = false;
-
     $request = json_decode($postdata)->data;
   
     $name = strtoupper($request->name);
@@ -17,10 +15,11 @@ if (isset($postdata) && !empty($postdata)) {
     if($row === 0){
         $sql = "INSERT INTO employees (name,surname,dni,salary,phone_number,position) VALUES ('$name','$surname','$dni','$request->salary','$request->telf','$position');";
         if ($result = mysqli_query($mysqli, $sql)) {
-            $exit = true;
+            
+            echo json_encode(true);
         }
     }else{
-        $exit = false;
+        echo json_encode([false, "Ya existe un empleado con el mismo DNI/NIE"]);   
     }
-    echo json_encode($exit);
+    
 }
