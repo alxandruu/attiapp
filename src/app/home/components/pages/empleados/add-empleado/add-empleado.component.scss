@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Play&display=swap%27');
-
 * {
   font-family: 'Play', sans-serif;
 }
-
+h2 {
+    color: #05314f;
+    font-weight: bold;
+}
 #borde{
     border: 1em solid #E2E072;
 }
@@ -25,23 +26,21 @@
       border-radius: 1rem;
       border: 2.3px dotted #05314f;
       label {
+          display: flex;
+          flex-direction:column ;
           span {
               font-size: 20px;
           }
           input {
               border-radius: 1rem;
               padding: 0.6rem 1rem;
-              width: 250px;
-              margin-left: 0.7rem;
+              width: 100%;            
               background-color: #e5e5e5;
               border: none;
               outline: none;
           }
       }
-      label + label {
-         margin: 1rem;
-          
-      }
+      
       .btn-custom {
           height: 50px;
           width: 291px;
@@ -58,17 +57,7 @@
   }
 }
 
-#botonPass{
-  background-color: #e2e072;
-  
 
-}
-.modal-content{
-  background-color: #05314f;
-  text-align: center;
-  color:white;
-  font-weight: bold;
-}
 @media (max-width: 576px) {
   #f1 {
       text-align: center;

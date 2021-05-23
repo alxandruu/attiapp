@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
   integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
 <div id="f1">
   <button class="btn mx-5" id="btn-volver" type="button" routerLink="..">
     <i class="fas fa-chevron-circle-left"></i>
@@ -7,64 +8,64 @@
 </div>
 
 
-<div class="container  ">
-  <div class="box p-4 mb-2">
-    <h2 class="me-auto">Añadir Empleado</h2>
-    <form class=" mt-4 bg-light p-4" [formGroup]="empleadoForm" (ngSubmit)="postEmpleadoForm()">
+<div class="container">
+  <div class="box p-4 ">
+    <h2>Añadir Empleado</h2>
+    <form class="mt-4 bg-light p-4" [formGroup]="empleadoForm" (ngSubmit)="postEmpleadoForm()">
       <div class="row mb-3">
         <div class="col-md-4 ">
-          <label><span>Nombre:</span><input type="text" placeholder="Introduce nombre" name="name"
-              formControlName="name" [ngClass]="{'is-invalid':name.touched && name.invalid}">
+          <label><span>Nombre</span><input type="text" class="form-control" placeholder="Introduce nombre" name="name" formControlName="name"
+              [ngClass]="{'is-invalid':name.touched && name.invalid}">
             <div class="invalid-feedback">
-              <div *ngIf="name.errors.required">El nombre es requerido</div>
-              <div *ngIf="name.errors.minlength">El nombre debe tener más de 1 letra</div>
+              <div *ngIf="name.errors?.required">El nombre es requerido</div>
+              <div *ngIf="name.errors?.minlength">El nombre debe tener más de 1 letra</div>
             </div>
           </label>
         </div>
         <div class="col-md-4 ">
-          <label><span>Apellido:</span><input type="text" placeholder="Introduce apellido" name="surname"
+          <label><span>Apellido</span><input type="text" class="form-control" placeholder="Introduce apellido" name="surname"
               formControlName="surname" [ngClass]="{'is-invalid':surname.touched && surname.invalid}">
             <div class="invalid-feedback">
-              <div *ngIf="surname.errors.required">El apellido es requerido</div>
-              <div *ngIf="surname.errors.minlength">El apellido debe tener más de 1 letra</div>
+              <div *ngIf="surname.errors?.required">El apellido es requerido</div>
+              <div *ngIf="surname.errors?.minlength">El apellido debe tener más de 1 letra</div>
             </div>
           </label>
         </div>
         <div class="col-md-4 ">
-          <label><span>DNI:</span><input type="text" placeholder="Introduce DNI" name="DNI" formControlName="dni"
+          <label><span>DNI</span><input type="text" class="form-control" placeholder="Introduce DNI" name="DNI" formControlName="dni"
               [ngClass]="{'is-invalid':dni.touched && dni.invalid}"
               pattern="^(\d{8})([A-Za-z])|([XYZxyz]\d{6,7}[A-Za-z])$">
             <div class="invalid-feedback">
-              <div *ngIf="dni.errors.required">El DNI o NIE es requerido</div>
-              <div *ngIf="dni.errors.pattern">El DNI o NIE debe tener el formato correcto</div>
+              <div *ngIf="dni.errors?.required">El DNI o NIE es requerido</div>
+              <div *ngIf="dni.errors?.pattern">El DNI o NIE debe tener el formato correcto</div>
             </div>
           </label>
         </div>
       </div>
       <div class="row mb-3">
         <div class="col-md-4">
-          <label><span>Salario:</span><input type="number" placeholder="Introduce salario" name="salary"
+          <label><span>Salario</span><input type="number" class="form-control" placeholder="Introduce salario" name="salary"
               formControlName="salary" step="any" min="0" [ngClass]="{'is-invalid':salary.touched && salary.invalid}">
             <div class="invalid-feedback">
-              <div *ngIf="salary.errors.required">El Salario es requerido</div>
-              <div *ngIf="salary.errors.min">El Salario debe ser mayor a 0</div>
+              <div *ngIf="salary.errors?.required">El Salario es requerido</div>
+              <div *ngIf="salary.errors?.min">El Salario debe ser mayor a 0</div>
             </div>
           </label>
         </div>
         <div class="col-md-4">
-          <label><span>Teléfono:</span><input type="text" placeholder="Introduce numero de teléfono" name="telf"
+          <label><span>Teléfono</span><input type="text" class="form-control" placeholder="Introduce numero de teléfono" name="telf"
               formControlName="telf" [ngClass]="{'is-invalid':telf.touched && telf.invalid}" pattern="^(\d{9})$">
             <div class="invalid-feedback">
-              <div *ngIf="telf.errors.required">El Teléfono es requerido</div>
-              <div *ngIf="telf.errors.pattern">El Teléfono debe tener 9 números</div>
+              <div *ngIf="telf.errors?.required">El Teléfono es requerido</div>
+              <div *ngIf="telf.errors?.pattern">El Teléfono debe tener 9 números</div>
             </div>
           </label>
         </div>
         <div class="col-md-4">
-          <label><span>Puesto:</span><input type="text" placeholder="Introduce puesto" name="position"
+          <label><span>Puesto</span><input type="text" class="form-control" placeholder="Introduce puesto" name="position"
               formControlName="position" [ngClass]="{'is-invalid':position.touched && position.invalid}">
             <div class="invalid-feedback">
-              <div *ngIf="position.errors.required">La Posicion es requerido</div>      
+              <div *ngIf="position.errors?.required">La Posicion es requerido</div>
             </div>
           </label>
         </div>
@@ -72,21 +73,12 @@
       <div class="row">
         <div class="col-md-12">
           <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-custom  " id="confirm">
+            <button type="submit" class="btn btn-custom">
               Agregar
             </button>
           </div>
-
         </div>
       </div>
-
-
-
-
-
-
-
-
     </form>
   </div>
 </div>
