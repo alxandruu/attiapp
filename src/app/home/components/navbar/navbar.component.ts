@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
+import { UserLogedService } from 'src/app/_services/user-loged.service';
 import { NavbarService } from './services/navbar.service';
 
 
@@ -12,12 +13,12 @@ export class NavbarComponent implements OnInit {
   name: string ;
   profile_img: string;
 
-  constructor(private navbarService: NavbarService) {
+  constructor(private navbarService: NavbarService, private userLoged: UserLogedService) {
     // this.userData();
   }
 
   ngOnInit(): void {
-    this.navbarService.getUserInfo()
+    this.userLoged.userinfo
     .pipe(first())
       .subscribe(
         data => { 
