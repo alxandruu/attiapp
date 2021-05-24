@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
+
+
 // Principales Componentes
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -28,6 +30,7 @@ import { FiltroPipe } from './home/components/pages/empleados/empleados-index/pi
 import { GananciasComponent } from './home/components/pages/ganancias/ganancias.component';
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -61,6 +64,7 @@ import { AddGananciaComponent } from './home/components/pages/ganancias/add-gana
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
