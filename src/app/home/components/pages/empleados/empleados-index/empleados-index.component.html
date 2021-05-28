@@ -52,7 +52,7 @@
       <td style="width: 10%;">
         <i class="fas fa-eye  me-3" data-bs-toggle="modal" data-bs-target="#empModal"  
           (click)="seeEmployee(empleado)"></i>
-        <i class="fas fa-edit me-3 "></i>
+        <i class="fas fa-edit me-3 " [routerLink]="['/dashboard/empleados/agregar']" (click)="editEmployee(empleado)"></i>
         <i class="far fa-trash-alt" (click)="deleteEmployee(empleado.id)"></i>
       </td>
     </tr>
