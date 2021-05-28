@@ -22,12 +22,21 @@ export class NavbarComponent implements OnInit {
     .pipe(first())
       .subscribe(
         data => { 
-          let img: string = (data["img_profile"] == '')? 'default.jpg':data["img_profile"]; 
+          let img: string;
+        if(data["img_profile"]== null || data["img_profile"]== undefined || data['img_profile']==''){
+          data['img_profile']='default.jpg';
+          img = data['img_profile'];
+        }else{
+          img = data['img_profile'];
+        }
+        //  let img: string = (data["img_profile"] == null) ? 'default.jpg':data["img_profile"]; 
+        
           this.name = data["name"];
           this.profile_img = '../../../../assets/img/users/' + img;
         },
         error => {
-          console.log("Error al obtener la imágen.");
+         
+          console.log(error);
         });;
   }
 

@@ -18,7 +18,7 @@ export class ProfileIndexComponent implements OnInit {
       data => {
         this.userInfo = {
           'username': data.username,
-          'admin_perm': (data.admin_perm)?'administrador':'normal',
+          'admin_perm': (data.admin_perm == 1 ) ? 'administrador':'normal',
           'name': data.name + ' ' +data.surname,
           'email':data.email
         };     
