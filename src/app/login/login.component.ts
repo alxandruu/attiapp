@@ -21,9 +21,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.loginService.isLoggedIn()) {
-      this.router.navigate(['/dashboard']);
-    }
+    let x = this.loginService.isLoggedIn();
+   
+    if (x != undefined)
+      x.subscribe(data => { if (data) { this.router.navigate(['/dashboard']); } })
   }
   postdata(loginForm1) {
     this.loginService.login(loginForm1.value.username.toLowerCase(), loginForm1.value.password, loginForm1.value.remember)
