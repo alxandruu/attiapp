@@ -7,6 +7,7 @@ $postdata = file_get_contents("php://input");
 if (isset($postdata) && !empty($postdata)) {
     $request = json_decode($postdata);
     $token = mysqli_real_escape_string($mysqli, trim($request->token));
+    
     $userid = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT userid FROM access WHERE token='$token'"))["userid"];
     
     $sql = "SELECT name, img_profile,username,admin_perm,surname,email FROM users where id='$userid'";

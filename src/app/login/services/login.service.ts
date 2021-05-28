@@ -19,7 +19,8 @@ export class LoginService {
   public login(username, password, remember) {
     return this.http.post(this.baseUrl + '/onlogin.php', { username, password })
       .pipe(map(data => {
-        this.setToken(data, remember);
+        if(data)
+          this.setToken(data, remember);
         //this.getLoggedInName.emit(true);
         return data;
       }));

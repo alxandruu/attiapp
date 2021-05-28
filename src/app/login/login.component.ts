@@ -31,8 +31,13 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          const redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/dashboard';
-          this.router.navigate([redirect]);
+          if(data){
+            const redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/dashboard';
+            this.router.navigate([redirect]);
+          }else {
+            this.errLogin();
+          }
+            
         },
         error => {
           this.errLogin();
