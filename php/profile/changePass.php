@@ -6,7 +6,9 @@ if (isset($postdata) && !empty($postdata)) {
     $pact = mysqli_real_escape_string($mysqli, trim($request->passact));
     $pnew = mysqli_real_escape_string($mysqli, trim($request->passnew));
     $token = mysqli_real_escape_string($mysqli, trim($request->token));
-    $sql = "SELECT password FROM users where id='$token'";
+    $userid = mysqli_fetch_assoc(mysqli_query($mysqli,"SELECT  userid FROM access where token='$token'"))['userid'];
+    $sql = "SELECT password FROM users where id='$userid'";
+  
     if ($result = mysqli_query($mysqli, $sql)) {
         if ($pact == '' || $pnew == '') {
             echo json_encode([false, "Ambos campos son requeridos."]);
@@ -22,7 +24,7 @@ if (isset($postdata) && !empty($postdata)) {
                     echo json_encode([false, "Las dos contraseñas son iguales"]);
                 } else {
                     $pnew = md5($pnew);
-                    $sqlupdate = "UPDATE users SET password='$pnew' WHERE id='$token'";
+                    $sqlupdate = "UPDATE users SET password='$pnew' WHERE id='$userid'";
                     $result2 = mysqli_query($mysqli, $sqlupdate);
                     echo json_encode([$result2, "Cambio de contraseña realizado correctamente"]);
                 }

@@ -22,7 +22,8 @@ if (isset($postdata) && !empty($postdata)) {
         $uniqueid = uniqid();
         $file = $folderPath . $uniqueid . '.' . $image_type;
         $fileDB = $uniqueid.'.'.$image_type;
-        $sql = "UPDATE users SET img_profile='$fileDB' WHERE id='$token'";
+        $userid = mysqli_fetch_assoc(mysqli_query($mysqli,"SELECT  userid FROM access where token='$token'"))['userid'];
+        $sql = "UPDATE users SET img_profile='$fileDB' WHERE id='$userid'";
         
         if($result= mysqli_query($mysqli, $sql)){
             
