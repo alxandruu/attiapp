@@ -1,14 +1,29 @@
-
+h2,
+h4 {
+    color: #05314f;
+}
 h2 {
     font-size: 36px;
-    color: #05314f;
+
     border-bottom: 2px solid #05314f;
     width: auto;
     padding-bottom: 0.6rem;
-    
-    
 }
-
+.user-detail {
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-left: 2px dotted grey;
+    .user-important {
+        padding: 0.5rem;
+        background-color: #05314f;
+        border: 1px solid black;
+        color: white;
+        border-radius: 1rem;
+    }
+}
+svg {
+    color: #05314f;
+}
 #permisos-body {
     div + div {
         margin-top: 1rem;
@@ -68,8 +83,8 @@ h2 {
     h2 {
         text-align: center;
     }
-   #col2 {
-    padding-right: 0;
-    padding-left: 0;
-   }
+    #col2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }

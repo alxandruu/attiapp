@@ -18,13 +18,18 @@ export class ProfileIndexComponent implements OnInit {
       data => {
         this.userInfo = {
           'username': data.username,
-          'admin_perm': (data.admin_perm == 1 ) ? 'administrador':'normal',
+          'admin_perm': data.admin_perm,
           'name': data.name + ' ' +data.surname,
           'email':data.email
-        };     
+        };
+        if(!data.admin_perm){
+          
+        }
       }
     )
 
   }
-
+  admin(){
+    alert("admin page")
+  }
 }
