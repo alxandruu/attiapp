@@ -15,6 +15,10 @@ export class EmpleadoService {
     return this.http.get<any>(this.baseUrl + '/empleados.php');
   }
 
+  public getJobs(){
+    return this.http.get<any>(this.baseUrl + '/jobs.php');
+  }
+
   public addEmployee(data) {
     return this.http.post(this.baseUrl + '/newemployee.php', { data });
   }

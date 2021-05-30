@@ -12,7 +12,11 @@ import Swal from 'sweetalert2';
 })
 export class AddEmpleadoComponent implements OnInit {
   empleadoForm: FormGroup;
+
+  jobs: [];
+
   title: String = 'Añadir Empleado';
+
   constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private route: ActivatedRoute, private router: Router) {
 
     if (this.empleadoService.emp) {
@@ -44,8 +48,23 @@ export class AddEmpleadoComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.getJobs();
+
+
   }
 
+  public getJobs(){
+    this.empleadoService.getJobs().subscribe(
+      data=> {
+        console.log(data);
+       this.jobs=data; 
+      },
+      error => {
+        console.log(error);
+      }
+
+    );
+  }
   public postEmpleadoForm() {
     if (this.empleadoForm.valid) {
       this.empleadoService.addEmployee(this.empleadoForm.value)
