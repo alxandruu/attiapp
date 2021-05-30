@@ -33,7 +33,7 @@ export class ChangePhotoComponent implements OnInit {
       .subscribe(
         data => {
           let img: string = (data["img_profile"] == '') ? 'default.jpg' : data["img_profile"];
-          this.actimg = '../../../../assets/img/users/' + img;
+          this.actimg = 'assets/img/users/' + img;
         },
         error => {
           console.log("Error al obtener la imágen actual.");

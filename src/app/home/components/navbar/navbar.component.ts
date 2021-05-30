@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
         //  let img: string = (data["img_profile"] == null) ? 'default.jpg':data["img_profile"]; 
         
           this.name = data["name"];
-          this.profile_img = '../../../../assets/img/users/' + img;
+          this.profile_img = 'assets/img/users/' + img;
         },
         error => {
          

@@ -17,7 +17,7 @@ export class EmpleadosIndexComponent implements OnInit {
   }];
   public page: number = 0;
   public buscar: string = '';
-  
+
   public empleado: Empleado = {
     id: null, name: null, surname: null, dni: null, salary: null, phone_number: null,
     position: null
@@ -98,5 +98,7 @@ export class EmpleadosIndexComponent implements OnInit {
   public seeEmployee(data) {
     this.empleado = data;
   }
-
+  editEmployee(data) {
+    this.empleadoService.editEmployee(data);
+  }
 }

@@ -52,7 +52,6 @@ export class LoginService {
   }
   public isLoggedIn() {
     const usertoken = this.getToken();
-    console.log(usertoken);
     if (usertoken != null) {
       return this.http.post(this.baseUrl + '/islogged.php', { usertoken })
         .pipe(map(data => {
