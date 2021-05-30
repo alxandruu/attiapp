@@ -44,11 +44,14 @@ export class AddEmpleadoComponent implements OnInit {
       });
     }
     this.empleadoService.emp = null;
+    this.getJobs();
+    
+    
   }
 
   ngOnInit(): void {
 
-    this.getJobs();
+    
 
 
   }
@@ -56,11 +59,11 @@ export class AddEmpleadoComponent implements OnInit {
   public getJobs(){
     this.empleadoService.getJobs().subscribe(
       data=> {
-        console.log(data);
-       this.jobs=data; 
+       this.jobs=data;
+      
       },
       error => {
-        console.log(error);
+        console.log("Hubo un error al extraer los puestos de trabajo");
       }
 
     );

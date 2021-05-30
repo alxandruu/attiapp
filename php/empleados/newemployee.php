@@ -9,7 +9,7 @@ if (isset($postdata) && !empty($postdata)) {
     $name = strtoupper($request->name);
     $surname = strtoupper($request->surname);
     $dni = strtoupper($request->dni);
-    $position = strtoupper($request->position);
+    $position = strtoupper ($request->position);
 
     if ($id == 0) {
         // Empleado Nuevo
@@ -30,7 +30,7 @@ if (isset($postdata) && !empty($postdata)) {
         WHERE id='$id'";
         if ($result = mysqli_query($mysqli, $sql)) {
             echo json_encode([true, "Empleado modifcado correctamente"]);
-        } else {
+        }else{
             http_response_code(404);
         }
     } else {
