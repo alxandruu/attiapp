@@ -63,8 +63,11 @@
           </label>
         </div>
         <div class="col-md-4">
-          <label><span>Puesto</span><input type="text" class="form-control" placeholder="Introduce puesto" name="position"
-              formControlName="position" [ngClass]="{'is-invalid':position.touched && position.invalid}">
+          <label><span>Puesto:</span><select type="text" class="form-control" placeholder="Introduce puesto" name="position"
+              formControlName="position" [ngClass]="{'is-invalid':position.touched && position.invalid}" >
+          <option value="{{job.job}}" *ngFor="let job of jobs">{{job.job}}</option>        
+          </select>
+    
             <div class="invalid-feedback">
               <div *ngIf="position.errors?.required">La Posicion es requerido</div>
             </div>
