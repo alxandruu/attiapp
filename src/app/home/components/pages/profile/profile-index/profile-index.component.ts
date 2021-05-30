@@ -10,7 +10,12 @@ import { PermissionsService } from './services/permissions.service';
   styleUrls: ['./profile-index.component.scss']
 })
 export class ProfileIndexComponent implements OnInit {
-  userInfo;
+  userInfo = {
+    'username': null,
+          'admin_perm': null,
+          'name': null,
+          'email':null
+  };
   constructor(private userLoged: UserLogedService) { }
 
   ngOnInit(): void {

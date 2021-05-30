@@ -19,7 +19,6 @@ export class UserLogedService {
     let token = this.loginService.getToken();
     return this.http.post(this.baseUrl + '/others/userinfo.php', { token })
       .pipe(map(data => {
-        console.log(data);
         return data;
       }));
   }

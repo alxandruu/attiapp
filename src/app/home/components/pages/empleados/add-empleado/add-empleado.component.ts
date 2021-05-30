@@ -16,8 +16,9 @@ export class AddEmpleadoComponent implements OnInit {
   constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private route: ActivatedRoute, private router: Router) {
 
     if (this.empleadoService.emp) {
-      this.title = 'Editar Empleado';
+      
       let emp = this.empleadoService.emp;
+      this.title = `Editar Empleado | ${emp.name} ${emp.surname}`;
       this.empleadoForm = this.fb.group({
         id: [emp.id],
         name: [emp.name, [Validators.required, Validators.minLength(2)]],
