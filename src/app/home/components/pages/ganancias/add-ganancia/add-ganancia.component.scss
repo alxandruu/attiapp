@@ -1,0 +1,95 @@
+* {
+    font-family: 'Play', sans-serif;
+  }
+  h2 {
+      color: #05314f;
+      font-weight: bold;
+  }
+  #borde{
+      border: 1em solid #E2E072;
+  }
+  #btn-volver {
+    font-size: 3.5rem;
+    color: #05314f;
+    &:active,&:focus{
+      outline: none !important;
+      box-shadow: none;
+  
+    }
+    
+  }
+  #btn-volver:hover {
+    color: #e2e072;
+  }
+  
+  
+  .box {
+    background-color: rgba(226, 224, 114, 0.6);
+    border: 3px solid #05314f;
+    border-radius: 1rem;
+    form {
+        border-radius: 1rem;
+        border: 2.3px dotted #05314f;
+        label {
+            display: flex;
+            flex-direction:column ;
+            span {
+                font-size: 20px;
+            }
+            input, select {
+                border-radius: 1rem;
+                padding: 0.6rem 1rem;
+                width: 100%;            
+                background-color: #e5e5e5;
+                border: none;
+                outline: none;
+            }
+        }
+        
+        .btn-custom {
+            height: 50px;
+            width: 291px;
+            border-radius: 40px;
+            color: white;
+            background-color: #05314f;
+            border: 2px solid black;
+        }
+  
+        .btn-custom:hover {
+            background-color: #e2e072;
+            color: black;
+        }
+    }
+  }
+  
+  
+  @media (max-width: 576px) {
+    #f1 {
+        text-align: center;
+        button {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .box {
+        form {
+            label {
+                input {
+                    width: 100%;
+                    margin-left: 0rem;
+                }
+                span + input {
+                    margin-top: 0.8rem;
+                }
+            }
+            .btn-custom {
+                width: 70%;
+                text-align: center;
+              
+                span {display: none;}
+            }
+            
+        }
+    }
+  }
+  

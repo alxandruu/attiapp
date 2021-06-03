@@ -65,7 +65,6 @@ export class AddEmpleadoComponent implements OnInit {
       error => {
         console.log("Hubo un error al extraer los puestos de trabajo");
       }
-
     );
   }
   public postEmpleadoForm() {

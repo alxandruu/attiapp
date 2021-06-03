@@ -28,6 +28,8 @@ import { FiltroPipe } from './home/components/pages/empleados/empleados-index/pi
 import { GananciasComponent } from './home/components/pages/ganancias/ganancias.component';
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
+import { AllGananciasComponent } from './home/components/pages/ganancias/all-ganancias/all-ganancias.component';
+import { FiltroPipeGanancia } from './home/components/pages/ganancias/all-ganancias/pipes/filtroganancias.pipe';
 
 
 
@@ -52,6 +54,8 @@ import { AddGananciaComponent } from './home/components/pages/ganancias/add-gana
     GananciasComponent,
     GananciasIndexComponent,
     AddGananciaComponent,
+    AllGananciasComponent,
+    FiltroPipeGanancia
    
   ],
   imports: [

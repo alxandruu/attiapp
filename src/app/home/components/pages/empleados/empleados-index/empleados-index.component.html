@@ -35,7 +35,7 @@
 <table class="mx-auto" style="width: 95%;" id="tabla">
   <thead>
     <tr>
-      <th>#</th>
+      <th class="text-center">#</th>
       <th>Nombre</th>
       <th>DNI</th>
       <th>Sueldo</th>
@@ -43,9 +43,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let empleado of empleados | filtro:page:buscar">
+    <tr *ngFor="let empleado of empleados | filtro:page:buscar; let i=index">
 
-      <td id="empID">{{empleado.id}}</td>
+      <td id="empID" class="text-center" >{{empleado.id}}</td>
       <td>{{empleado.name}} {{empleado.surname}}</td>
       <td>{{empleado.dni}}</td>
       <td>{{empleado.salary}} €</td>

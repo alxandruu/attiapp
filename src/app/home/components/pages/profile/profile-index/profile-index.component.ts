@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { UserLogedService } from 'src/app/_services/user-loged.service';
-import { PermissionsService } from './services/permissions.service';
 
 
 @Component({
@@ -16,6 +15,7 @@ export class ProfileIndexComponent implements OnInit {
           'name': null,
           'email':null
   };
+  fileDownloadURL: String = `${window.location.protocol}//${window.location.hostname}/attiapp/resources/manual_Attia.pdf`;
   constructor(private userLoged: UserLogedService) { }
 
   ngOnInit(): void {

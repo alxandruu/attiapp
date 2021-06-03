@@ -20,35 +20,37 @@ import { AddEmpleadoComponent } from './home/components/pages/empleados/add-empl
 import { GananciasComponent } from './home/components/pages/ganancias/ganancias.component';
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
+import { AllGananciasComponent } from './home/components/pages/ganancias/all-ganancias/all-ganancias.component';
 
 
 const routes: Routes = [
-  { path: '', component:LoginComponent},
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'dashboard', component: HomeComponent, canActivate: [AuthguardGuard],
     children: [
-       { path: '', component: DashboardComponent },
+      { path: '', component: DashboardComponent },
       {
         path: 'profile', component: ProfileComponent, children: [
           { path: '', component: ProfileIndexComponent },
-          { path: 'cambiarClave', component: ChangePassComponent},
-          { path: 'cambiarFoto', component: ChangePhotoComponent}
+          { path: 'cambiarClave', component: ChangePassComponent },
+          { path: 'cambiarFoto', component: ChangePhotoComponent }
         ]
       },
       {
         path: 'empleados', component: EmpleadosComponent, children: [
           { path: '', component: EmpleadosIndexComponent },
-          { path: 'agregar', component: AddEmpleadoComponent},      
+          { path: 'agregar', component: AddEmpleadoComponent },
         ]
       },
       {
         path: 'ganancias', component: GananciasComponent, children: [
           { path: '', component: GananciasIndexComponent },
-          { path: 'agregar', component: AddGananciaComponent},      
+          { path: 'agregar', component: AddGananciaComponent },
+          { path: 'todasganancias', component: AllGananciasComponent },
         ]
       }
-      
+
     ]
   }
 ];
