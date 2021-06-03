@@ -9,7 +9,7 @@
 
 
 <div class="container">
-  <div class="box p-4 ">
+  <div class="box p-4 mb-3">
     <h2>{{title}}</h2>
     <form class="mt-4 bg-light p-4" [formGroup]="empleadoForm" (ngSubmit)="postEmpleadoForm()">
       <div class="row mb-3">
@@ -63,7 +63,7 @@
           </label>
         </div>
         <div class="col-md-4">
-          <label><span>Puesto:</span><select type="text" class="form-control" placeholder="Introduce puesto" name="position"
+          <label><span>Puesto:</span><select type="text" class="form-select" placeholder="Introduce puesto" name="position"
               formControlName="position" [ngClass]="{'is-invalid':position.touched && position.invalid}">
           <option  value="{{job.job}}"  [selected]="position.value===job.job" *ngFor="let job of jobs" >{{job.job}}</option>        
           </select>

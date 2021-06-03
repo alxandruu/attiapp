@@ -1,0 +1,78 @@
+#btn-volver {
+    font-size: 3.5rem;
+    color: #05314f;
+    &:active,
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
+    }
+}
+#btn-volver:hover {
+    color: #e2e072;
+}
+#filtroCategoria {
+    font-size: 1.4rem;
+    color: #05314f;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0px 15px;
+    tr {
+        th {
+            background-color: #2f2d2c;
+            color: white;
+            box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
+            font-size: 22px;
+        }
+        td {
+            color: white;
+            font-size: 20px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1rem;
+            border: none;
+        }
+    }
+    tbody {
+        tr {
+            background-color: #05314f;
+        }
+    }
+}
+
+.btn-paginate {
+    color: #05314f;
+    font-weight: bold;
+    &:hover {
+        transition: color 200ms ease;
+        color: #e2e072;
+
+        svg path {
+            fill: #e2e072;
+            transition: fill 200ms ease;
+        }
+    }
+    svg path {
+        fill: #05314f;
+        transition: fill 200ms ease;
+    }
+}
+.btn{
+    &:active,&:focus{
+      outline: none !important;
+      box-shadow: none;
+    }
+  }
+@media (max-width: 576px) {
+    #f1 {
+        text-align: center;
+        button {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

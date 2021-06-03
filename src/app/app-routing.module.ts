@@ -20,35 +20,40 @@ import { AddEmpleadoComponent } from './home/components/pages/empleados/add-empl
 import { GananciasComponent } from './home/components/pages/ganancias/ganancias.component';
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
+<<<<<<< HEAD
 import { GastosComponent } from './home/components/pages/gastos/gastos.component';
 import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
 import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
+=======
+import { AllGananciasComponent } from './home/components/pages/ganancias/all-ganancias/all-ganancias.component';
+>>>>>>> fa5c08a59c6e152956f6892c4973fda421e1d42d
 
 
 const routes: Routes = [
-  { path: '', component:LoginComponent},
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'dashboard', component: HomeComponent, canActivate: [AuthguardGuard],
     children: [
-       { path: '', component: DashboardComponent },
+      { path: '', component: DashboardComponent },
       {
         path: 'profile', component: ProfileComponent, children: [
           { path: '', component: ProfileIndexComponent },
-          { path: 'cambiarClave', component: ChangePassComponent},
-          { path: 'cambiarFoto', component: ChangePhotoComponent}
+          { path: 'cambiarClave', component: ChangePassComponent },
+          { path: 'cambiarFoto', component: ChangePhotoComponent }
         ]
       },
       {
         path: 'empleados', component: EmpleadosComponent, children: [
           { path: '', component: EmpleadosIndexComponent },
-          { path: 'agregar', component: AddEmpleadoComponent},      
+          { path: 'agregar', component: AddEmpleadoComponent },
         ]
       },
       {
         path: 'ganancias', component: GananciasComponent, children: [
           { path: '', component: GananciasIndexComponent },
-          { path: 'agregar', component: AddGananciaComponent},      
+          { path: 'agregar', component: AddGananciaComponent },
+          { path: 'todasganancias', component: AllGananciasComponent },
         ]
       },
       {
@@ -57,7 +62,7 @@ const routes: Routes = [
           { path: 'agregar', component: AddGastoComponent},      
         ]
       }
-      
+
     ]
   }
 ];

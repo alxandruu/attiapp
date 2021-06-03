@@ -6,17 +6,17 @@
   
   <div id="caja-botones" class="position-relative mb-2 mx-auto" style="width: 95%;">
     <div class="d-flex position-absolute" id="contenedor" style="left: 30px; top: -15px; width: 95%;">
-      <button id="caja1" [routerLink]="['/ganancias/addganancias']">
+      <button id="caja1" [routerLink]="['/dashboard/ganancias/agregar']">
         Añadir ganancia
       </button>
-      <button v class="ms-4" id="caja2" [routerLink]="['/ganancias/todasganancias']">
+      <button v class="ms-4" id="caja2" [routerLink]="['/dashboard/ganancias/todasganancias']">
         Todas las ganancias
       </button>
       <div class="d-flex ms-auto" id="contenedor2">
   
         <p class="mx-auto my-auto">Total:</p>
         <div id="caja3" class="ms-2">
-          123678,00<span>€</span>
+          {{total()}} €
         </div>
   
   
@@ -28,19 +28,17 @@
     <table style="width: 100%;" >
       <thead>
         <tr id="sombra">
-          <th>Ganancias</th>
-          <th>Euros</th>
+          <th >Ganancias</th>
+          <th class="text-end pe-3">Precio</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="fila">
-          <td>Soporte Técnico</td>
-          <td>1024.36€</td>
-        </tr>  
-        <tr class="fila">
-          <td>Atención al cliente</td>
-          <td>1024.36€</td>
+        <tr class="fila" *ngFor="let ganancia of ganancias">
+          <td class="gan-nombre" [routerLink]="['/dashboard/ganancias/todasganancias']" (click)="moreGanancias(ganancia.id)">{{ganancia.nombre}}</td>
+          <td class="bg-dark text-white text-end pe-3">{{calcGananciasXCategoria(ganancia.data)}} €</td>
         </tr>
+
+       
       </tbody>
     </table>
   </div>

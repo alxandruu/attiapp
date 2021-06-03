@@ -1,1 +1,69 @@
-<p>add-ganancia works!</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+  integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+<div id="f1">
+    <button class="btn mx-5" id="btn-volver" type="button" routerLink="..">
+        <i class="fas fa-chevron-circle-left"></i>
+    </button>
+</div>
+
+
+<div class="container">
+    <div class="box p-4 mb-3">
+        <h2>Añadir Ganancia</h2>
+        <form class="mt-4 bg-light p-4" [formGroup]="gananciaForm" (ngSubmit)="postGananciaForm()">
+            <div class="row mb-3">
+                <div class="col-md-4 ">
+                    <label><span>Titulo</span><input type="text" class="form-control" placeholder="Introduce Titulo"
+                            name="title" formControlName="title"
+                            [ngClass]="{'is-invalid':title.touched && title.invalid}">
+                        <div class="invalid-feedback">
+                            <div *ngIf="title.errors?.required">El titulo es requerido</div>
+                            <div *ngIf="title.errors?.minlength">El titulo debe tener más de 1 letra</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="col-md-4 ">
+                    <label><span>Fecha</span><input type="date" class="form-control" style="padding-right: 1.7rem;" placeholder="Introduce Fecha"
+                            name="date" formControlName="date" [ngClass]="{'is-invalid':date.touched && date.invalid}">
+                        <div class="invalid-feedback">
+                            <div *ngIf="date.errors?.required">La Fecha es requerida</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="col-md-4">
+                    <label><span>Precio</span><input type="number" class="form-control" placeholder="Introduce Precio"
+                            name="price" formControlName="price" step="any" min="0"
+                            [ngClass]="{'is-invalid':price.touched && price.invalid}">
+                        <div class="invalid-feedback">
+                            <div *ngIf="price.errors?.required">El Precio es requerido</div>
+                            <div *ngIf="price.errors?.min">El Precio debe ser mayor a 0</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="row mb-3">                
+                <div class="col-md-4">
+                    <label><span>Categoria</span><select type="text" class="form-select"
+                            name="id_cat" formControlName="id_cat"
+                            [ngClass]="{'is-invalid':id_cat.touched && id_cat.invalid}">
+                            <option  value="{{ct.id}}" *ngFor="let ct of categories" >{{ct.nombre}}</option>     
+                        </select>
+
+                        <div class="invalid-feedback">
+                            <div *ngIf="id_cat.errors?.required">La Posicion es requerido</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-custom">
+                            Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
