@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class AddEmpleadoComponent implements OnInit {
   empleadoForm: FormGroup;
 
-  jobs: [];
+  jobs;
 
   title: String = 'Añadir Empleado';
 

@@ -29,6 +29,10 @@ import { GananciasComponent } from './home/components/pages/ganancias/ganancias.
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
 
+import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
+import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
+import { GastosComponent } from './home/components/pages/gastos/gastos.component';
+
 
 
 
@@ -52,6 +56,9 @@ import { AddGananciaComponent } from './home/components/pages/ganancias/add-gana
     GananciasComponent,
     GananciasIndexComponent,
     AddGananciaComponent,
+    AddGastoComponent,
+    GastosIndexComponent,
+    GastosComponent
    
   ],
   imports: [

@@ -20,6 +20,9 @@ import { AddEmpleadoComponent } from './home/components/pages/empleados/add-empl
 import { GananciasComponent } from './home/components/pages/ganancias/ganancias.component';
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
+import { GastosComponent } from './home/components/pages/gastos/gastos.component';
+import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
+import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
 
 
 const routes: Routes = [
@@ -46,6 +49,12 @@ const routes: Routes = [
         path: 'ganancias', component: GananciasComponent, children: [
           { path: '', component: GananciasIndexComponent },
           { path: 'agregar', component: AddGananciaComponent},      
+        ]
+      },
+      {
+        path: 'gastos', component: GastosComponent, children: [
+          { path: '', component: GastosIndexComponent },
+          { path: 'agregar', component: AddGastoComponent},      
         ]
       }
       
