@@ -30,6 +30,9 @@ import { GananciasIndexComponent } from './home/components/pages/ganancias/ganan
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
 import { AllGananciasComponent } from './home/components/pages/ganancias/all-ganancias/all-ganancias.component';
 import { FiltroPipeGanancia } from './home/components/pages/ganancias/all-ganancias/pipes/filtroganancias.pipe';
+import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
+import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
+import { GastosComponent } from './home/components/pages/gastos/gastos.component';
 
 
 
@@ -56,7 +59,10 @@ import { FiltroPipeGanancia } from './home/components/pages/ganancias/all-gananc
     GananciasIndexComponent,
     AddGananciaComponent,
     AllGananciasComponent,
-    FiltroPipeGanancia
+    FiltroPipeGanancia,
+    AddGastoComponent,
+    GastosIndexComponent,
+    GastosComponent
    
   ],
   imports: [
