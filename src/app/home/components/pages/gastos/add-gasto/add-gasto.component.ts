@@ -1,29 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EmpleadoService } from '../services/empleado.service';
+import { EmpleadoService } from '../../empleados/services/empleado.service';
+import { GastosService } from '../services/gastos.service';
 import Swal from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-add-empleado',
-  templateUrl: './add-empleado.component.html',
-  styleUrls: ['./add-empleado.component.scss']
+  selector: 'app-add-gasto',
+  templateUrl: './add-gasto.component.html',
+  styleUrls: ['./add-gasto.component.scss']
 })
-export class AddEmpleadoComponent implements OnInit {
-  empleadoForm: FormGroup;
+export class AddGastoComponent implements OnInit {
 
-  jobs;
+  gastoForm: FormGroup;
 
-  title: String = 'Añadir Empleado';
+  jobs: [];
 
-  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private route: ActivatedRoute, private router: Router) {
+  //title: String = 'Añadir Empleado';
+
+  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private gastoService: GastosService,private route: ActivatedRoute, private router: Router) {
 
     if (this.empleadoService.emp) {
-      
+      /*
       let emp = this.empleadoService.emp;
       this.title = `Editar Empleado | ${emp.name} ${emp.surname}`;
-      this.empleadoForm = this.fb.group({
+      this.gastoForm = this.fb.group({
         id: [emp.id],
         name: [emp.name, [Validators.required, Validators.minLength(2)]],
         surname: [emp.surname, [Validators.required, Validators.minLength(2)]],
@@ -31,20 +33,18 @@ export class AddEmpleadoComponent implements OnInit {
         salary: [emp.salary, [Validators.required, Validators.min(0)]],
         telf: [emp.phone_number, [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
         position: [emp.position, [Validators.required]]
-      });
+      });*/
     } else {
-      this.empleadoForm = this.fb.group({
+      this.gastoForm = this.fb.group({
         id: ['0'],
         name: ['', [Validators.required, Validators.minLength(2)]],
-        surname: ['', [Validators.required, Validators.minLength(2)]],
-        dni: ['', [Validators.required]],
-        salary: ['', [Validators.required, Validators.min(0)]],
-        telf: ['', [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
-        position: ['', [Validators.required]]
+       date: ['', [Validators.required]],
+        price: ['', [Validators.required]],
+        categoria: ['', ]
       });
     }
     this.empleadoService.emp = null;
-    this.getJobs();
+    this.getCats();
     
     
   }
@@ -56,8 +56,8 @@ export class AddEmpleadoComponent implements OnInit {
 
   }
 
-  public getJobs(){
-    this.empleadoService.getJobs().subscribe(
+  public getCats(){
+    this.gastoService.getGastos().subscribe(
       data=> {
        this.jobs=data;
       
@@ -65,13 +65,15 @@ export class AddEmpleadoComponent implements OnInit {
       error => {
         console.log("Hubo un error al extraer los puestos de trabajo");
       }
+
     );
   }
-  public postEmpleadoForm() {
-    if (this.empleadoForm.valid) {
-      this.empleadoService.addEmployee(this.empleadoForm.value)
+  public gastoSubmitForm() {
+    if (this.gastoForm.valid) {
+      this.gastoService.addGasto(this.gastoForm.value)
         .subscribe(
           data => {
+            
             if (data[0] == true) {
               Swal.fire({
                 title: data[1],
@@ -81,7 +83,7 @@ export class AddEmpleadoComponent implements OnInit {
                 allowEnterKey: false,
                 confirmButtonText: 'Continuar'
               }).then((result) => {
-                this.router.navigate(['/dashboard/empleados']);
+                this.router.navigate(['/dashboard/gastos']);
               })
             } else {
               Swal.fire({
@@ -94,6 +96,7 @@ export class AddEmpleadoComponent implements OnInit {
                 confirmButtonText: 'Continuar'
               })
             }
+           
           },
           error => {
             Swal.fire({
@@ -122,11 +125,8 @@ export class AddEmpleadoComponent implements OnInit {
 
 
   // FORM GETTERS
-  get name() { return this.empleadoForm.get('name') };
-  get surname() { return this.empleadoForm.get('surname') };
-  get dni() { return this.empleadoForm.get('dni') };
-  get salary() { return this.empleadoForm.get('salary') };
-  get telf() { return this.empleadoForm.get('telf') };
-  get position() { return this.empleadoForm.get('position') };
-
+  get name() { return this.gastoForm.get('name') };
+  get date() { return this.gastoForm.get('date') };
+  get price() { return this.gastoForm.get('price') };
+  get categoria() { return this.gastoForm.get('categoria') };
 }
