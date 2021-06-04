@@ -25,6 +25,7 @@
                 <th>Fecha</th>
                 <th>Precio</th>
                 <th>Categoría</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,7 @@
                 <td>{{g.date}}</td>
                 <td>{{g.price}} €</td>
                 <td>{{g.categoria}}</td>
+                <td class="text-center bg-dark  btn-delete" (click)="delete(g.id)"><i class="far fa-trash-alt" ></i></td>
             </tr>
             <tr *ngIf="(ganancias | fganancia:page:buscar).length===0"
                 style="text-align: center; background-color: white; margin-left: 2em;">
@@ -53,7 +55,8 @@
             <span class="ms-2"> Anterior</span>
         </button>
         &nbsp;
-        <button class="btn  d-flex align-items-center btn-paginate " (click)="nextPage()" [disabled]="(ganancias | fganancia:page:buscar).length===0">
+        <button class="btn  d-flex align-items-center btn-paginate " (click)="nextPage()"
+            [disabled]="(ganancias | fganancia:page:buscar).length===0">
             <span class="me-2">Siguiente</span>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"

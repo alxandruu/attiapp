@@ -9,7 +9,7 @@ export class GananciasService {
   public id_cat: number;
 
   constructor(private http: HttpClient) {
-   }
+  }
 
   public getGanancias() {
     return this.http.get<any>(this.baseUrl + '/ganancias.php');
@@ -26,5 +26,9 @@ export class GananciasService {
   }
   public moreGanancias(data) {
     this.id_cat = data;
+  }
+  public deleteGanancia(id) {
+    return this.http.post(this.baseUrl + '/delganancia.php', { id });
+    
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GananciasService } from '../services/ganancias.service';
 import { Ganancias } from 'src/app/_interfaces/ganancias.interfaces';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-all-ganancias',
@@ -16,13 +17,13 @@ export class AllGananciasComponent implements OnInit {
   public buscar: number = 0;
 
   constructor(private gs: GananciasService) {
-    if(this.gs.id_cat)
-      this.buscar  = this.gs.id_cat;
-      this.gs.id_cat = 0;
-   }
+    if (this.gs.id_cat)
+      this.buscar = this.gs.id_cat;
+    this.gs.id_cat = 0;
+  }
 
   ngOnInit(): void {
-    this.getEmpleados();
+    this.getGanancias();
     this.getCategories();
   }
   private getCategories() {
@@ -36,11 +37,10 @@ export class AllGananciasComponent implements OnInit {
     )
   }
 
-  private getEmpleados() {
+  private getGanancias() {
     this.gs.getAllGanancias().subscribe(
       data => {
-        this.ganancias = data;
-        console.log(data);
+        this.ganancias = data;      
       },
       error => {
         console.log(error);
@@ -56,8 +56,46 @@ export class AllGananciasComponent implements OnInit {
   public nextPage() {
     this.page += 10;
   }
-  public onChangeBuscar(value){
-    this.page = 0; 
+  public onChangeBuscar(value) {
+    this.page = 0;
     this.buscar = value;
+  }
+  public delete(id) {
+    Swal.fire({
+      title: '¿Estas seguro?',
+      text: `Al confirmar, la ganancia con ID [${id}] será eliminado`,
+      icon: 'warning',
+      allowOutsideClick: false,
+      allowEscapeKey: true,
+      allowEnterKey: false,
+      showCancelButton: true,
+      confirmButtonColor: '#7dce82',
+      cancelButtonColor: '#FE5F55',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.gs.deleteGanancia(id)
+          .subscribe(
+            data => {
+              if (data === true) {
+                Swal.fire({
+                  title: "Empleado eliminado correctamente",
+                  icon: 'success',
+                  allowOutsideClick: false,
+                  allowEscapeKey: false,
+                  allowEnterKey: false,
+                  confirmButtonText: 'Aceptar',
+                  confirmButtonColor: '#7dce82',
+                });
+                this.getGanancias();
+              }
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      }
+    })
   }
 }

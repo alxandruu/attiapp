@@ -28,6 +28,22 @@ table {
         td {
             color: white;
             font-size: 20px;
+            &.btn-delete {
+                cursor: pointer;
+                transition: background 0.4s ease;
+                
+                &:hover {
+                    background: #f23838 !important;
+                    transition: color 0.2s ease;
+                    transition: background 0.4s ease;
+                    color: white;
+                } 
+                &:active {
+                    background: #ac2727 !important;
+                    transition: all 0.1s linear;
+                }       
+            }
+
         }
 
         th,
@@ -61,12 +77,13 @@ table {
         transition: fill 200ms ease;
     }
 }
-.btn{
-    &:active,&:focus{
-      outline: none !important;
-      box-shadow: none;
+.btn {
+    &:active,
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
     }
-  }
+}
 @media (max-width: 576px) {
     #f1 {
         text-align: center;
