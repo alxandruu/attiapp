@@ -24,6 +24,7 @@ import { AllGananciasComponent } from './home/components/pages/ganancias/all-gan
 import { GastosComponent } from './home/components/pages/gastos/gastos.component';
 import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
 import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
+import { AllGastosComponent } from './home/components/pages/gastos/all-gastos/all-gastos.component';
 
 
 const routes: Routes = [
@@ -57,7 +58,7 @@ const routes: Routes = [
         path: 'gastos', component: GastosComponent, children: [
           { path: '', component: GastosIndexComponent },
           { path: 'agregar', component: AddGastoComponent },
-    
+          { path: 'todosgastos', component: AllGastosComponent },
         ]
       }
 

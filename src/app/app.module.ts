@@ -33,6 +33,9 @@ import { FiltroPipeGanancia } from './home/components/pages/ganancias/all-gananc
 import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
 import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
 import { GastosComponent } from './home/components/pages/gastos/gastos.component';
+import { AllGastosComponent } from './home/components/pages/gastos/all-gastos/all-gastos.component';
+
+import { GastoFilterPipe } from './home/components/pages/gastos/all-gastos/pipes/gasto-filter.pipe';
 
 
 
@@ -62,7 +65,9 @@ import { GastosComponent } from './home/components/pages/gastos/gastos.component
     FiltroPipeGanancia,
     AddGastoComponent,
     GastosIndexComponent,
-    GastosComponent
+    GastosComponent,
+    AllGastosComponent,
+    GastoFilterPipe
    
   ],
   imports: [

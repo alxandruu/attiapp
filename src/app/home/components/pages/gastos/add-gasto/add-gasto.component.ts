@@ -15,65 +15,51 @@ export class AddGastoComponent implements OnInit {
 
   gastoForm: FormGroup;
 
-  jobs: [];
+  categorias;
 
-  //title: String = 'Añadir Empleado';
+ 
 
-  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService, private gastoService: GastosService,private route: ActivatedRoute, private router: Router) {
+  constructor(private fb: FormBuilder, private gastoService: GastosService,  private router: Router) {
 
-    if (this.empleadoService.emp) {
-      /*
-      let emp = this.empleadoService.emp;
-      this.title = `Editar Empleado | ${emp.name} ${emp.surname}`;
-      this.gastoForm = this.fb.group({
-        id: [emp.id],
-        name: [emp.name, [Validators.required, Validators.minLength(2)]],
-        surname: [emp.surname, [Validators.required, Validators.minLength(2)]],
-        dni: [emp.dni, [Validators.required]],
-        salary: [emp.salary, [Validators.required, Validators.min(0)]],
-        telf: [emp.phone_number, [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
-        position: [emp.position, [Validators.required]]
-      });*/
-    } else {
-      this.gastoForm = this.fb.group({
-        id: ['0'],
-        name: ['', [Validators.required, Validators.minLength(2)]],
-       date: ['', [Validators.required]],
-        price: ['', [Validators.required]],
-        categoria: ['', ]
-      });
-    }
-    this.empleadoService.emp = null;
+
+    this.gastoForm = this.fb.group({
+      id: ['0'],
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      date: ['', [Validators.required]],
+      price: ['', [Validators.required, Validators.min(0)]],
+      categoria: ['', [Validators.required]]
+    });
+
+
     this.getCats();
-    
-    
+
+
   }
 
   ngOnInit(): void {
 
-    
+
 
 
   }
 
-  public getCats(){
-    this.gastoService.getGastos().subscribe(
-      data=> {
-       this.jobs=data;
-      
+  private getCats() {
+    this.gastoService.getCategories().subscribe(
+      data => {
+        this.categorias = data;
       },
-      error => {
-        console.log("Hubo un error al extraer los puestos de trabajo");
-      }
 
-    );
+      error => {
+        console.log("Hubo un error al extraer las categorías.");
+      }
+    )
   }
   public gastoSubmitForm() {
     if (this.gastoForm.valid) {
       this.gastoService.addGasto(this.gastoForm.value)
         .subscribe(
           data => {
-            
+
             if (data[0] == true) {
               Swal.fire({
                 title: data[1],
@@ -96,7 +82,7 @@ export class AddGastoComponent implements OnInit {
                 confirmButtonText: 'Continuar'
               })
             }
-           
+
           },
           error => {
             Swal.fire({

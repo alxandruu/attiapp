@@ -39,6 +39,7 @@ export class GastosIndexComponent implements OnInit {
 
   public total(){
     let total = 0;
+    if(this.categorias)
     this.categorias.map(categoria => {         
       categoria.data.map(gasto => {           
         let price = parseFloat(gasto["price"]);          
