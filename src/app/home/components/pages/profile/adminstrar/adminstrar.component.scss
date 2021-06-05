@@ -1,0 +1,30 @@
+* {
+    font-family: "Play", sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+#box-left {
+    div {
+        font-size: 1.53rem;
+        a {
+            &.active,
+            &:hover {
+                border-bottom: 3px solid #05314f;
+                border-left: 10px solid #05314f;
+            }
+        }
+        a + a {
+            margin-top: 1rem;
+        }
+    }
+}
+#box-right {
+    .box {
+        border: 10px solid #05314f;
+       
+    }
+}

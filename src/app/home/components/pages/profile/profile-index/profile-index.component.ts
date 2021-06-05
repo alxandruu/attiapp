@@ -27,14 +27,9 @@ export class ProfileIndexComponent implements OnInit {
           'name': data.name + ' ' +data.surname,
           'email':data.email
         };
-        if(!data.admin_perm){
-          
-        }
       }
     )
 
   }
-  admin(){
-    alert("admin page")
-  }
+ 
 }
