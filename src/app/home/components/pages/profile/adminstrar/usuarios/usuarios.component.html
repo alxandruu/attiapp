@@ -1,1 +1,99 @@
-<p>usuarios works!</p>
+<div class="header mt-2">
+    <h3>Usuarios</h3>
+</div>
+<hr>
+<div class="p-2">
+    <div class="section text-start">
+        <div class="title">
+            <h5 class=" ms-2">Nuevo Usuario</h5>
+        </div>
+        <div class="content p-3 mx-4">
+            <form>
+                <div class="row g-3 align-items-center">
+                    <span class="col-auto">Nombre</span>
+                    <div class="col-auto">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-auto">
+                        El nombre debe tener más de una letra
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <span class="col-auto">Apellidos</span>
+                    <div class="col-auto">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-auto">
+                        El apellido debe tener más de una letra
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <span class="col-auto">Usuario</span>
+                    <div class="col-auto">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-auto">
+                        El usuario debe tener mínimo 4 letras o números
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <span class="col-auto">Email</span>
+                    <div class="col-auto">
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="col-auto">
+                        El email debe tener formato correcto
+                    </div>
+                </div>
+                <div class="row g-2 align-items-center">
+                    <span class="col-auto">Administrador</span>
+                    <div class="col-auto ">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-success mt-3">Crear Usuario</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="section text-start">
+        <div class="title">
+            <h5 class=" ms-2">Modificar Usuarios</h5>
+        </div>
+        <div class="content p-3 mx-4">
+            <div class="row g-2 align-items-center">
+                <span class="col-auto">Filtrar</span>
+                <div class="col-auto"><input type="text" class="form-control"></div>
+            </div>
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Admin</th>
+                        <th class="text-center" scope="col">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" class="d-none">1</td>
+                        <td>gbalexandru</td>
+                        <td>bgabrielalexandru@gmail.com</td>
+                        <td ><div   style="height: 2vh; background-color: #46aa1e; border-radius: 1rem; "></div></td>
+                        <td class="text-center"><button class="btn btn-primary me-2" style="height: 1vh;"></button><button class="btn btn-warning me-2" style="height: 1vh;"></button><button class="btn btn-danger" style="height: 1vh;"></button> </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" class="d-none">2</td>
+                        <td>adritr</td>
+                        <td>adritr1@gmail.com</td>
+                        <td ><div   style="height: 2vh; background-color: #aa2020; border-radius: 1rem; "></div></td>
+                        <td class="text-center"><button class="btn btn-primary me-2" style="height: 1vh;"></button><button class="btn btn-warning me-2" style="height: 1vh;"></button><button class="btn btn-danger" style="height: 1vh;"></button> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
