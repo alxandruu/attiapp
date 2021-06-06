@@ -25,6 +25,10 @@ import { AdminstrarComponent } from './home/components/pages/profile/administrar
 import { CategoriasComponent } from './home/components/pages/profile/administrar/categorias/categorias.component';
 import { UsuariosComponent } from './home/components/pages/profile/administrar/usuarios/usuarios.component';
 import { ConfComponent } from './home/components/pages/profile/administrar/conf/conf.component';
+import { GastosComponent } from './home/components/pages/gastos/gastos.component';
+import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
+import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
+import { AllGastosComponent } from './home/components/pages/gastos/all-gastos/all-gastos.component';
 
 
 const routes: Routes = [
@@ -59,6 +63,13 @@ const routes: Routes = [
           { path: 'todasganancias', component: AllGananciasComponent },
         ]
       },
+      {
+        path: 'gastos', component: GastosComponent, children: [
+          { path: '', component: GastosIndexComponent },
+          { path: 'agregar', component: AddGastoComponent },
+          { path: 'todosgastos', component: AllGastosComponent },
+        ]
+      }
 
     ]
   }

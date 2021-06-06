@@ -3,7 +3,7 @@ include_once("../database.php");
 
 $categorias = [];
 
-$sql = "SELECT nombre FROM categoria";
+$sql = "SELECT * FROM categoria";
 $sql2 = "SELECT * FROM gastos";
 
 

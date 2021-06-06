@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+  integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+<div id="f1">
+  <button class="btn mx-5" id="btn-volver" type="button" routerLink="..">
+    <i class="fas fa-chevron-circle-left"></i>
+  </button>
+</div>
+
+
+<div class="container">
+  <div class="box p-4 ">
+    <h2>Añadir Gasto</h2>
+    <form class="mt-4 bg-light p-4" [formGroup]="gastoForm" (ngSubmit)="gastoSubmitForm()">
+      <div class="row mb-3">
+        <div class="col-md-4 ">
+          <label><span>Nombre</span><input type="text" class="form-control" placeholder="Introduce nombre" name="name"
+              formControlName="name" [ngClass]="{'is-invalid':name.touched && name.invalid}">
+            <div class="invalid-feedback">
+              <div *ngIf="name.errors?.required">El titulo del gasto es requerido</div>
+              <div *ngIf="name.errors?.minlength">El titulo debe tener más de una letra</div>
+            </div>
+          </label>
+        </div>
+        <div class="col-md-4 ">
+          <label><span>Fecha</span><input type="date" class="form-control" placeholder="Introduce fecha" name="date"
+              formControlName="date" [ngClass]="{'is-invalid':date.touched && date.invalid}" style="padding-right: 1.7rem;">
+            <div class="invalid-feedback">
+              <div *ngIf="date.errors?.required">La fecha es requerida</div>
+
+            </div>
+          </label>
+        </div>
+        <div class="col-md-4 ">
+          <label><span>Precio</span><input type="number" class="form-control" placeholder="Introduce precio" name="price"
+              formControlName="price" step="any" min="0" [ngClass]="{'is-invalid':price.touched && price.invalid}"  >
+            <div class="invalid-feedback">
+              <div *ngIf="price.errors?.required">El precio es requerido</div>
+              <div *ngIf="price.errors?.min">El precio introducido deber ser superior a 0</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="row mb-3">
+
+
+        <div class="col-md-4">
+          <label><span>Categoría:</span><select type="text" class="form-control" placeholder="Introduce categoría"
+              name="categoria" formControlName="categoria"
+              [ngClass]="{'is-invalid':categoria.touched && categoria.invalid}">
+              <option  value="{{i.id}}" *ngFor="let i of categorias" >{{i.nombre}}</option>  
+            </select>
+
+              <div class="invalid-feedback">
+                <div *ngIf="categoria.errors?.required">La categoria es requerida</div>
+              </div>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-custom">
+              Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

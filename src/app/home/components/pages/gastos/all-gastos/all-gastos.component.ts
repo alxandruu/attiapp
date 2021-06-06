@@ -1,35 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { GananciasService } from '../services/ganancias.service';
-import { Ganancias } from 'src/app/_interfaces/ganancias.interfaces';
+import { Gastos } from 'src/app/_interfaces/gastos.interfaces';
+import { GastosService } from '../services/gastos.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-all-ganancias',
-  templateUrl: './all-ganancias.component.html',
-  styleUrls: ['./all-ganancias.component.scss']
+  selector: 'app-all-gastos',
+  templateUrl: './all-gastos.component.html',
+  styleUrls: ['./all-gastos.component.scss']
 })
-export class AllGananciasComponent implements OnInit {
-  ganancias: Ganancias[] = [{
-    id: null, name: null, date: null, price: null, id_cat: null, categoria: null
+export class AllGastosComponent implements OnInit {
+  gastos: Gastos[] = [{
+    id: null, name: null, price: null, id_cat: null, date: null, categoria: null
   }];
-  categories;
+
+  categorias;
   public page: number = 0;
   public buscar: number = 0;
+  constructor(private gastoService: GastosService) {
+      if(this.gastoService.id_cat)
+        this.buscar  = this.gastoService.id_cat;
+        this.gastoService.id_cat = 0;
+   }
 
-  constructor(private gs: GananciasService) {
-    if (this.gs.id_cat)
-      this.buscar = this.gs.id_cat;
-    this.gs.id_cat = 0;
-  }
+   
 
   ngOnInit(): void {
-    this.getGanancias();
-    this.getCategories();
+
+    this.getCats();
+    this.getGastos();
+
   }
-  private getCategories() {
-    this.gs.getCategories().subscribe(
+
+
+  private getCats() {
+    this.gastoService.getCategories().subscribe(
       data => {
-        this.categories = data;
+        this.categorias = data;
       },
       error => {
         console.log(error);
@@ -37,10 +43,11 @@ export class AllGananciasComponent implements OnInit {
     )
   }
 
-  private getGanancias() {
-    this.gs.getAllGanancias().subscribe(
+  private getGastos() {
+    this.gastoService.getAllGasto().subscribe(
       data => {
-        this.ganancias = data;      
+        this.gastos = data;
+        console.log(data);
       },
       error => {
         console.log(error);
@@ -48,6 +55,10 @@ export class AllGananciasComponent implements OnInit {
     );
   }
 
+  public filtrarGasto(value){
+    this.page = 0; 
+    this.buscar = value;
+  }
   public prevPage() {
     if (this.page > 0)
       this.page -= 10;
@@ -56,14 +67,11 @@ export class AllGananciasComponent implements OnInit {
   public nextPage() {
     this.page += 10;
   }
-  public onChangeBuscar(value) {
-    this.page = 0;
-    this.buscar = value;
-  }
-  public delete(id) {
+
+  public delete(id){
     Swal.fire({
       title: '¿Estas seguro?',
-      text: `Al confirmar, la ganancia con ID [${id}] será eliminado`,
+      text: `Al confirmar, el gasto con ID [${id}] será eliminado`,
       icon: 'warning',
       allowOutsideClick: false,
       allowEscapeKey: true,
@@ -75,12 +83,12 @@ export class AllGananciasComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.gs.deleteGanancia(id)
+        this.gastoService.deleteGasto(id)
           .subscribe(
             data => {
               if (data === true) {
                 Swal.fire({
-                  title: "Ganancia eliminado correctamente",
+                  title: "Gasto eliminado correctamente",
                   icon: 'success',
                   allowOutsideClick: false,
                   allowEscapeKey: false,
@@ -88,7 +96,7 @@ export class AllGananciasComponent implements OnInit {
                   confirmButtonText: 'Aceptar',
                   confirmButtonColor: '#7dce82',
                 });
-                this.getGanancias();
+                this.getGastos();
               }
             },
             error => {

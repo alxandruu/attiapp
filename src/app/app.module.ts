@@ -29,6 +29,13 @@ import { AdminstrarComponent } from './home/components/pages/profile/administrar
 import { CategoriasComponent } from './home/components/pages/profile/administrar/categorias/categorias.component';
 import { UsuariosComponent } from './home/components/pages/profile/administrar/usuarios/usuarios.component';
 import { ConfComponent } from './home/components/pages/profile/administrar/conf/conf.component';
+import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
+import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
+import { GastosComponent } from './home/components/pages/gastos/gastos.component';
+import { AllGastosComponent } from './home/components/pages/gastos/all-gastos/all-gastos.component';
+
+import { GastoFilterPipe } from './home/components/pages/gastos/all-gastos/pipes/gasto-filter.pipe';
+
 
 
 
@@ -56,6 +63,11 @@ import { ConfComponent } from './home/components/pages/profile/administrar/conf/
     AddGananciaComponent,
     AllGananciasComponent,
     FiltroPipeGanancia,
+    AddGastoComponent,
+    GastosIndexComponent,
+    GastosComponent,
+    AllGastosComponent,
+    GastoFilterPipe,
     AdminstrarComponent,
     CategoriasComponent,
     UsuariosComponent,

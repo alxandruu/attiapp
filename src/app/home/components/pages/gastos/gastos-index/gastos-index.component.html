@@ -1,0 +1,46 @@
+<div id="caja-botones-responsive">
+  <button id="boton1-responsive" class="mx-auto botones-responsive" [routerLink]="['/gastos/addgasto']">Añadir
+    gasto</button>
+  <button id="boton2-responsive" class="mx-auto botones-responsive" [routerLink]="['/gastos/allgasto']">Todos los
+    gastos</button>
+  <p class=mx-auto>Total: <button id="boton3-responsive" class="botones-responsive">123678,00€</button></p>
+</div>
+
+<div id="caja-botones" class="position-relative mb-2 mx-auto" style="width: 95%;">
+  <div class="d-flex position-absolute" id="contenedor" style="left: 30px; top: -15px; width: 95%;">
+    <button id="caja1" [routerLink]="['/dashboard/gastos/agregar']">
+      Añadir gasto
+    </button>
+    <button class="ms-4" id="caja2" [routerLink]="['/dashboard/gastos/todosgastos']">
+      Todos los gastos
+    </button>
+    <div class="d-flex ms-auto" id="contenedor2">
+
+      <p class="mx-auto my-auto">Total:</p>
+      <div id="caja3" class="ms-2">
+        {{total()}}<span> €</span>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+<div class=" mx-auto" style="width:95%">
+  <table style="width: 100%;">
+    <thead>
+      <tr id="sombra">
+        <th>Categoría</th>
+        <th class=" text-center">Cantidad</th>
+        <th class="text-end pe-3">Euros</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="fila" *ngFor="let gasto of categorias">
+        <td class="gan-nombre"  [routerLink]="['/dashboard/gastos/todosgastos']" (click)="moreGastos(gasto.id)">{{gasto.nombre}}</td>
+        <td class="bg-dark text-white text-center" >{{gasto.data.length}}</td>
+        <td class="bg-dark text-white text-end pe-3">{{totalPrice(gasto.data)}} €</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
