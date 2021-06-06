@@ -2,6 +2,9 @@ h2,
 h4 {
     color: #05314f;
 }
+a {
+    text-decoration: none;
+}
 h2 {
     font-size: 36px;
 
@@ -40,7 +43,8 @@ svg {
     }
 }
 #conf-perfil-body {
-    button + button {
+    button + button,
+    button + a {
         margin-top: 1rem;
     }
 }
@@ -51,6 +55,7 @@ svg {
     font-weight: bold;
     border: 0px;
 }
+
 .btn-custom:hover {
     background-color: #e2e072;
 }

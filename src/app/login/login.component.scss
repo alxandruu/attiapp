@@ -3,6 +3,17 @@
 #blogo {
     height: 100%;
 }
+#appVersion{
+    font-size: 0.775rem;
+    font-family: 'Play', sans-serif;
+    color:  #05314F;
+    font-weight: bold;
+    span {
+        a {
+
+        }
+    }
+}
 
 #form-div {
     font-family: 'Play', sans-serif;
@@ -61,7 +72,10 @@
             }
         }
     }
-  
+  #appVersion{
+      margin-left: auto;
+      margin-right: auto;
+  }
 }
 
 

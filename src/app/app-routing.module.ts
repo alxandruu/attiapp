@@ -25,6 +25,10 @@ import { GastosComponent } from './home/components/pages/gastos/gastos.component
 import { GastosIndexComponent } from './home/components/pages/gastos/gastos-index/gastos-index.component';
 import { AddGastoComponent } from './home/components/pages/gastos/add-gasto/add-gasto.component';
 import { AllGastosComponent } from './home/components/pages/gastos/all-gastos/all-gastos.component';
+import { AdminstrarComponent } from './home/components/pages/profile/adminstrar/adminstrar.component';
+import { CategoriasComponent } from './home/components/pages/profile/adminstrar/categorias/categorias.component';
+import { UsuariosComponent } from './home/components/pages/profile/adminstrar/usuarios/usuarios.component';
+import { ConfComponent } from './home/components/pages/profile/adminstrar/conf/conf.component';
 
 
 const routes: Routes = [
@@ -38,7 +42,12 @@ const routes: Routes = [
         path: 'profile', component: ProfileComponent, children: [
           { path: '', component: ProfileIndexComponent },
           { path: 'cambiarClave', component: ChangePassComponent },
-          { path: 'cambiarFoto', component: ChangePhotoComponent }
+          { path: 'cambiarFoto', component: ChangePhotoComponent },
+          { path: 'administrar', component: AdminstrarComponent, children: [
+            {path: 'categorias', component: CategoriasComponent},
+            {path: 'usuarios', component: UsuariosComponent},
+            {path: 'conf', component: ConfComponent}
+          ] }
         ]
       },
       {

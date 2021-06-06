@@ -15,7 +15,7 @@ export class ProfileIndexComponent implements OnInit {
           'name': null,
           'email':null
   };
-  fileDownloadURL: String = `${window.location.protocol}//${window.location.hostname}/attiapp/resources/manual_Attia.pdf`;
+  fileURL: String = `${window.location.protocol}//${window.location.hostname}/attiapp/resources/manual_Attia.pdf`;
   constructor(private userLoged: UserLogedService) { }
 
   ngOnInit(): void {
@@ -27,14 +27,9 @@ export class ProfileIndexComponent implements OnInit {
           'name': data.name + ' ' +data.surname,
           'email':data.email
         };
-        if(!data.admin_perm){
-          
-        }
       }
     )
 
   }
-  admin(){
-    alert("admin page")
-  }
+ 
 }

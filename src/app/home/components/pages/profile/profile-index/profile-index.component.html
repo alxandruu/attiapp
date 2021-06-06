@@ -64,8 +64,8 @@
                     <button class="btn px-3 py-2 btn-custom" [routerLink]="['/dashboard/profile/cambiarFoto']">Cambiar
                         foto
                         perfil</button>
-                    <button class="btn px-3 py-2 btn-custom" [disabled]="userInfo.admin_perm ==0"
-                        (click)='admin()'>Administrar</button>
+                    <a [routerLink]="['/dashboard/profile/administrar']" class="btn px-3 py-2 btn-custom" *ngIf="userInfo.admin_perm == 1;">Administrar</a>
+                    
                 </div>
             </div>
             <div class="text-end mt-4 box p-4">
@@ -76,8 +76,8 @@
                         siguiente número de
                         teléfono <span> +34
                             123 456
-                            789</span> o descargando el manual de la aplicación.</p>
-                    <a href="{{fileDownloadURL}}" download="manual"><button class="px-3 py-2 btn-custom ">Descargar Manual</button></a>
+                            789</span>
+                    </p>
                 </div>
             </div>
         </div>

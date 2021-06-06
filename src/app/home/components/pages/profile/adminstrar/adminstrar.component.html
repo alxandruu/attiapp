@@ -1,0 +1,14 @@
+<div class="row container-fluid">
+    <div class="col-md-4 p-3" id="box-left">
+        <div class="d-flex flex-column ">
+            <a [routerLink]="['/dashboard/profile/administrar/categorias']" routerLinkActive="active" class="text-dark p-1">Categorías</a>
+            <a [routerLink]="['/dashboard/profile/administrar/usuarios']" routerLinkActive="active" class="text-dark p-1 ">Usuarios</a>
+            <a [routerLink]="['/dashboard/profile/administrar/conf']" routerLinkActive="active " class="text-dark p-1 ">Configuración</a>
+        </div>
+    </div>
+    <div class="col-md-8 " id="box-right">
+        <div class="box text-center p-2">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
