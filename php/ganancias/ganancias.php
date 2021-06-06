@@ -33,7 +33,15 @@ if ($result = mysqli_query($mysqli, $sql)) {
        
     }
     
-    echo json_encode($ganancias);
+    //Eliminar categorías vacías
+    $return_cat = [];
+    for($j=0;$j < count($ganancias);$j++){
+
+       if(count($ganancias[$j]['data'])>0){
+        array_push($return_cat,$ganancias[$j]);
+       }
+    }
+    echo json_encode($return_cat);
 } else {
     http_response_code(404);
 }

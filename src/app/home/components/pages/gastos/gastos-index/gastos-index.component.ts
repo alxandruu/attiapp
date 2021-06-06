@@ -8,18 +8,18 @@ import { GastosService } from '../services/gastos.service';
 })
 export class GastosIndexComponent implements OnInit {
 
- categorias;
+  categorias;
   constructor(private gastosService: GastosService) { }
 
   ngOnInit(): void {
     this.getGastos();
   }
 
-  
+
   private getGastos() {
     this.gastosService.getGastos().subscribe(
       data => {
-        this.categorias=data;
+        this.categorias = data;
 
       },
       error => {
@@ -28,28 +28,29 @@ export class GastosIndexComponent implements OnInit {
     );
   }
 
-  public totalPrice(data){
-    let i=0; 
+  public totalPrice(data) {
+    let i = 0;
     let resultado = 0;
-    for(i=0; i<data.length; i++){
+    for (i = 0; i < data.length; i++) {
       resultado = parseFloat(data[i].price) + resultado;
     }
     return resultado;
   }
 
-  public total(){
+  public total() {
     let total = 0;
-    if(this.categorias)
-    this.categorias.map(categoria => {         
-      categoria.data.map(gasto => {           
-        let price = parseFloat(gasto["price"]);          
-         total += price;         })       
-        });
-        return total;
-}
+    if (this.categorias)
+      this.categorias.map(categoria => {
+        categoria.data.map(gasto => {
+          let price = parseFloat(gasto["price"]);
+          total += price;
+        })
+      });
+    return total.toFixed(2);
+  }
 
-public moreGastos(data){
-  this.gastosService.moreGastos(data);
-}
+  public moreGastos(data) {
+    this.gastosService.moreGastos(data);
+  }
 
 }

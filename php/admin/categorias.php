@@ -9,7 +9,8 @@ if ($result = mysqli_query($mysqli, $sql)) {
     while ($row = mysqli_fetch_assoc($result)) {
         $cat = $row["id"];
         $countGan = mysqli_num_rows(mysqli_query($mysqli, "SELECT id t from ganancias WHERE id_cat='$cat'"));
-        $row["relaciones"] = $countGan;
+        $countLos = mysqli_num_rows(mysqli_query($mysqli, "SELECT id t from gastos WHERE id_cat='$cat'"));
+        $row["relaciones"] = $countGan + $countLos;
         $categories[$i] = $row;
         $i++;
     }

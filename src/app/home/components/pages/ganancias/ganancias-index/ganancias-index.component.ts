@@ -33,7 +33,7 @@ export class GananciasIndexComponent implements OnInit {
           total += price;
         })
       });
-    return total;
+    return total.toFixed(2);
   }
   public moreGanancias(data) {
     this.gs.moreGanancias(data);
