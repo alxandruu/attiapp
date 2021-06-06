@@ -21,10 +21,10 @@ import { GananciasComponent } from './home/components/pages/ganancias/ganancias.
 import { GananciasIndexComponent } from './home/components/pages/ganancias/ganancias-index/ganancias-index.component';
 import { AddGananciaComponent } from './home/components/pages/ganancias/add-ganancia/add-ganancia.component';
 import { AllGananciasComponent } from './home/components/pages/ganancias/all-ganancias/all-ganancias.component';
-import { AdminstrarComponent } from './home/components/pages/profile/adminstrar/adminstrar.component';
-import { CategoriasComponent } from './home/components/pages/profile/adminstrar/categorias/categorias.component';
-import { UsuariosComponent } from './home/components/pages/profile/adminstrar/usuarios/usuarios.component';
-import { ConfComponent } from './home/components/pages/profile/adminstrar/conf/conf.component';
+import { AdminstrarComponent } from './home/components/pages/profile/administrar/adminstrar.component';
+import { CategoriasComponent } from './home/components/pages/profile/administrar/categorias/categorias.component';
+import { UsuariosComponent } from './home/components/pages/profile/administrar/usuarios/usuarios.component';
+import { ConfComponent } from './home/components/pages/profile/administrar/conf/conf.component';
 
 
 const routes: Routes = [

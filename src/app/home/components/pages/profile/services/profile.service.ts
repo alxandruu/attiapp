@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { map } from 'rxjs/operators';
-import { LoginService } from 'src/app/login/services/login.service';
+import { LoginService } from 'src/app/_services/login.service';
 
 @Injectable({
   providedIn: 'root'

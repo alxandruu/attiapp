@@ -8,16 +8,16 @@
             <h5 class="text-start ms-2">Crear Categoría</h5>
         </div>
         <div class="content p-3 mx-4">
-            <form>
+            <form [formGroup]="catForm" (ngSubmit)="post()">
                 <div class="row g-4 align-items-center">
                     <div class="col-auto">
                         <label class="col-form-label">Nombre</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" formControlName="name">
                     </div>
-                    <div class="col-auto invalid">
-                        El nombre debe tener más de una letra
+                    <div class="col-auto ">
+                        El nombre debe tener más de 1 letra
                     </div>
                     <div class="col-auto ms-auto">
                         <button type="submit" class="btn btn-success ">Agregar</button>
@@ -35,17 +35,17 @@
             <table class="table ">
                 <thead>
                     <tr>
-                        <th scope="col">Nombre</th>
+                        <th class="text-start" scope="col">Nombre</th>
                         <th scope="col">Relaciones</th>
                         <th scope="col">#</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row" class="d-none">1</td>
-                        <td>Categoria 1</td>
-                        <td>3</td>
-                        <td><button class="btn btn-danger" style="height: 1vh; width: 4vw;"></button> </td>
+                    <tr *ngFor="let c of categories">
+                        <td class="text-start">{{c.nombre}}</td>
+                        <td>{{c.relaciones}}</td>
+                        <td><button class="btn btn-danger" style="height: 1vh; width: 4vw;" title="Eliminar" (click)="delCat(c)"></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

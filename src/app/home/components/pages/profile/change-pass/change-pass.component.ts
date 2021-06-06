@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { LoginService } from 'src/app/login/services/login.service';
+import { LoginService } from 'src/app/_services/login.service';
 import { ProfileService } from '../services/profile.service';
 import * as $ from "jquery";
 import { Router } from '@angular/router';
