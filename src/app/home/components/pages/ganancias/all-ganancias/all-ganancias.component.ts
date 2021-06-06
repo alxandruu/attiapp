@@ -80,7 +80,7 @@ export class AllGananciasComponent implements OnInit {
             data => {
               if (data === true) {
                 Swal.fire({
-                  title: "Empleado eliminado correctamente",
+                  title: "Ganancia eliminado correctamente",
                   icon: 'success',
                   allowOutsideClick: false,
                   allowEscapeKey: false,

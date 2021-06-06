@@ -26,5 +26,12 @@ export class GastosService {
     return this.http.get<any>(this.baseUrl + '/allgastos.php');
   }
 
+  public deleteGasto(id) {
+    return this.http.post(this.baseUrl + '/deletegasto.php', { id });
+    
+  }
+  public moreGastos(data){
+    this.id_cat=data;
+  }
 }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gastos } from 'src/app/_interfaces/gastos.interfaces';
-import { GananciasService } from '../../ganancias/services/ganancias.service';
 import { GastosService } from '../services/gastos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-all-gastos',
@@ -18,8 +18,8 @@ export class AllGastosComponent implements OnInit {
   public buscar: number = 0;
   constructor(private gastoService: GastosService) {
       if(this.gastoService.id_cat)
-      this.buscar  = this.gastoService.id_cat;
-      this.gastoService.id_cat = 0;
+        this.buscar  = this.gastoService.id_cat;
+        this.gastoService.id_cat = 0;
    }
 
    
@@ -68,4 +68,42 @@ export class AllGastosComponent implements OnInit {
     this.page += 10;
   }
 
+  public delete(id){
+    Swal.fire({
+      title: '¿Estas seguro?',
+      text: `Al confirmar, el gasto con ID [${id}] será eliminado`,
+      icon: 'warning',
+      allowOutsideClick: false,
+      allowEscapeKey: true,
+      allowEnterKey: false,
+      showCancelButton: true,
+      confirmButtonColor: '#7dce82',
+      cancelButtonColor: '#FE5F55',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.gastoService.deleteGasto(id)
+          .subscribe(
+            data => {
+              if (data === true) {
+                Swal.fire({
+                  title: "Gasto eliminado correctamente",
+                  icon: 'success',
+                  allowOutsideClick: false,
+                  allowEscapeKey: false,
+                  allowEnterKey: false,
+                  confirmButtonText: 'Aceptar',
+                  confirmButtonColor: '#7dce82',
+                });
+                this.getGastos();
+              }
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      }
+    })
+  }
 }

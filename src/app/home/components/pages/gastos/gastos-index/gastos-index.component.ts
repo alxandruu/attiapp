@@ -48,4 +48,8 @@ export class GastosIndexComponent implements OnInit {
         return total;
 }
 
+public moreGastos(data){
+  this.gastosService.moreGastos(data);
+}
+
 }

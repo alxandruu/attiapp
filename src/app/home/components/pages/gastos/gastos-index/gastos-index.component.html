@@ -37,8 +37,8 @@
     </thead>
     <tbody>
       <tr class="fila" *ngFor="let gasto of categorias">
-        <td class="gan-nombre">{{gasto.nombre}}</td>
-        <td class="bg-dark text-white text-center">{{gasto.data.length}}</td>
+        <td class="gan-nombre"  [routerLink]="['/dashboard/gastos/todosgastos']" (click)="moreGastos(gasto.id)">{{gasto.nombre}}</td>
+        <td class="bg-dark text-white text-center" >{{gasto.data.length}}</td>
         <td class="bg-dark text-white text-end pe-3">{{totalPrice(gasto.data)}} €</td>
       </tr>
     </tbody>
