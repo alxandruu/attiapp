@@ -7,7 +7,8 @@
 # Only exists if Bazel was run
 /bazel-out
 
-
+/node_modules
+node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -47,3 +48,7 @@ Thumbs.db
 #Image Profiles
 /uploads
 src/assets/img/users
+
+# Dependencies
+
+
